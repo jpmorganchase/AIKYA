@@ -1,0 +1,82 @@
+[
+    {
+        "id": 9,
+        "fileName": "bank1_[no_fraud]_[app_frac_1]_[no_overlap]_[1].csv",
+        "label": "Batch 1",
+        "anomalyDesc": "No Anomalies",
+        "domainType": "payment_fraud"
+    },
+    {
+
+        "id": 12,
+        "fileName": "bank1_[type1]_[app_frac_0.9]_[no_overlap]_[eval_3].csv",
+        "label": "Batch 3",
+
+        "id": 11,
+        "fileName": "bank1_[type1]_[app_frac_0.9]_[no_overlap]_[eval_2].csv",
+        "label": "Batch 2",
+
+        "anomalyDesc": "Anomalous Location",
+        "domainType": "payment_fraud"
+    },
+    {
+
+        "id": 13,
+        "fileName": "bank1_[type1]_[app_frac_0.9]_[no_overlap]_[eval_4].csv",
+        "label": "Batch 4",
+
+        "id": 12,
+        "fileName": "bank1_[type1]_[app_frac_0.9]_[no_overlap]_[eval_3].csv",
+        "label": "Batch 3",
+
+        "anomalyDesc": "Anomalous Location",
+        "domainType": "payment_fraud"
+    },
+    {
+
+        "id": 16,
+        "fileName": "bank1_[type2]_[app_frac_0.9]_[no_overlap]_[eval_2].csv",
+        "label": "Batch 2",
+=======
+        "id": 14,
+        "fileName": "bank1_[type1]_[app_frac_0.9]_[no_overlap]_[eval_5].csv",
+        "label": "Batch 5",
+        "anomalyDesc": "Anomalous Location",
+        "domainType": "payment_fraud"
+    },
+    {
+        "id": 15,
+        "fileName": "bank1_[type2]_[app_frac_0.9]_[no_overlap]_[eval_1].csv",
+        "label": "Batch 1",
+
+        "anomalyDesc": "Anomalous Account Age",
+        "domainType": "payment_fraud"
+    },
+    {
+
+        "id": 17,
+        "fileName": "bank1_[type2]_[app_frac_0.9]_[no_overlap]_[eval_3].csv",
+        "label": "Batch 3",
+
+        "id": 18,
+        "fileName": "bank1_[type2]_[app_frac_0.9]_[no_overlap]_[eval_4].csv",
+        "label": "Batch 4",
+
+        "anomalyDesc": "Anomalous Account Age",
+        "domainType": "payment_fraud"
+    },
+    {
+        "id": 19,
+        "fileName": "bank1_[type2]_[app_frac_0.9]_[no_overlap]_[eval_5].csv",
+        "label": "Batch 5",
+        "anomalyDesc": "Anomalous Account Age",
+        "domainType": "payment_fraud"
+    },
+    {
+        "id": 20,
+        "fileName": "bank1_[type1_type2]_[app_frac_0.9]_[no_overlap]_[eval_1].csv",
+        "label": "Batch 1",
+        "anomalyDesc": "Anomalous Location and Account Age",
+        "domainType": "payment_fraud"
+    }
+]

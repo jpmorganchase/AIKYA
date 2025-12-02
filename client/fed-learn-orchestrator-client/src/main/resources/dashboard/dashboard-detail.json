@@ -1,0 +1,45 @@
+[
+    {
+        "headerName": "ID",
+        "field": "id",
+        "editable": false,
+        "width": 70,
+        "type": "rightAligned"
+    },
+    {
+        "headerName": "Batch Id",
+        "field": "batchId",
+        "width": 120
+    },
+    {
+        "headerName": "Anomalous",
+        "field": "prediction",
+        "filter": "agSetColumnFilter",
+        "headerTooltip": "Model predicted this record as anomalous",
+        "pinned": "right",
+        "width": 120
+    },
+    {
+        "headerName": "Previous Anomalous",
+        "field": "previousPrediction",
+        "filter": "agSetColumnFilter",
+        "headerTooltip": "Previous Model prediction for the same record",
+        "pinned": "right",
+        "width": 120
+    },
+    {
+        "headerName": "Model Confidence Score",
+        "field": "confidenceScore",
+        "filter": "agSetColumnFilter",
+        "headerTooltip": "Degree of Confidence",
+        "pinned": "right",
+        "width": 120
+    },
+    {
+        "headerName": "User Feedback",
+        "field": "status",
+        "filter": "agSetColumnFilter",
+        "headerTooltip": "Allows User to override model predicted decision. This override will be used in retraining the model",
+        "hide": true
+    }
+]

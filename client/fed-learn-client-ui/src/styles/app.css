@@ -1,0 +1,479 @@
+
+body{
+    background: #f6f6f6;
+    font-family: "Roboto";
+   
+  }
+  body, h1, h2, h3, h4, h5, h6{
+    margin: 0;
+    padding: 0;
+
+  }
+  * {
+    font-family: "Roboto"; 
+  }
+
+  .aikya-logo{
+    height: 32px;
+    width: 15%;
+    display: flex;
+  }
+  .saltText, h1.saltText{
+    font-family: "Roboto";
+  }
+h1.saltText{
+color:#3b3f46;
+font-weight: 700;
+font-size: 24px;
+margin-top: 16px;
+
+}
+
+.saltFormFieldLabel.saltText{
+    font-weight: 400;
+    font-size: 12px;
+    color:#212529;
+    font-family: "Roboto";
+}
+  /* login css */
+  .Auth-form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+  }
+  
+  .Auth-form {
+    width: 420px;
+    box-shadow: rgb(0 0 0 / 16%) 1px 1px 10px;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    border-radius: 8px;
+    background-color: white;
+  }
+  
+  .Auth-form-content {
+    padding-left: 12%;
+    padding-right: 12%;
+  }
+  
+  .Auth-form-title {
+    text-align: center;
+    margin-bottom: 1em;
+    font-size: 24px;
+    color: rgb(34, 34, 34);
+    font-weight: 800;
+  }
+  
+  label {
+    font-size: 14px;
+    font-weight: 600;
+    color: rgb(34, 34, 34);
+  }
+  
+  .link-primary {
+    color: #007bff;
+    cursor: pointer;
+  }
+  
+  .btn-primary {
+    width: 100%;
+  }
+  
+  .error {
+    color: #dc2c10;
+    font-size: 0.87rem;
+    list-style: none;
+    padding: 0;
+  }
+  
+  /* Login css ends ehre */
+  .App {
+    text-align: center;
+  }
+  
+  .App-logo {
+    height: 40vmin;
+    pointer-events: none;
+  }
+  
+  @media (prefers-reduced-motion: no-preference) {
+    .App-logo {
+      animation: App-logo-spin infinite 20s linear;
+    }
+  }
+  
+  .App-header {
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+  }
+  
+  .App-link {
+    color: #61dafb;
+  }
+  
+  @keyframes App-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .q_btns{
+    float: right;
+    position: relative;
+    right:4px;
+  
+  }
+  .saltAccordion{
+    border-top:none;
+    }
+    .topRow{
+      display: flex;
+      width: 100%;
+    }
+    .nextRow{
+      width: 100%;
+    display: block;
+    }
+    .nextRow .saltCard{
+      width: 99.7%;
+      padding-left: 31px;
+   
+    }
+  .saltCard{
+    width: 49.8%;
+    padding: 3px 3px 3px 16px;
+    margin-right: 3px;
+
+    }
+  
+    .carouselBlock .saltInteractableCardGroup{
+  width:100%;
+    }
+  .carouselBlock .saltInteractableCard {
+    padding: 10px;
+    max-width: 25%;
+    display: flex;
+    width: 21%;
+    margin: 0 auto;
+    border-radius: 10px;
+    --card-accent-color: none;
+  }
+  .stateSuccess{
+      color: #00875d;
+      padding: 4px 0px !important;
+      border:1px solid #00875d;
+      border-radius: 10px;
+      min-width: 83px !important;
+      margin-top: -33px;
+      margin-right: 4px;
+  }
+    .saltAccordionPanel-indentedContent{
+      padding-left: 0;
+    }
+   
+    .selectedCard{
+      border-color: #2670a9;
+    }
+    .carouselBlock  .grid-container {
+      display: inline-block;
+      
+    }
+  
+    
+    #TxnBlock, .saltDateInput-bordered.saltDateInput{
+        border: 1px solid #ced2d9;
+    }
+    #TxnBlock, .txn_details{
+      background: #fff;
+      padding: 10px;
+    }
+    #TxnBlock button svg{
+        width:1.5em;
+        height:1.5em;
+    }
+
+    /* #TxnBlock button:not([disabled]) svg path{
+        fill:blue
+    } */
+    .floatRight{
+      float: right !important;
+      text-align: right;
+    }
+    .textAlginCenter{
+        text-align: center;
+    }
+  
+    .carouselBlock .grid-item.fullerWidth{
+        min-width: 240px;
+    text-align: right;
+    padding: 0px 3px 0;
+}
+.carouselBlock .grid-item {
+    padding: 5px 3px;
+    float: left;
+    font-size: 13px;
+    width: 98px;
+    overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  }
+  .grid-item.leftField{
+    min-width:110px;
+    text-align: left;
+}
+.grid-item.leftField1{
+    min-width:150px;
+    margin-top: 9px;
+}
+.carouselBlock .grid-item.leftField.fullerWidth{
+    text-align: left;
+}
+
+.fontBold{
+  font-weight: bold;
+  font-size: 24px !important;
+}
+.grid-item.leftField.noPading{
+    padding: 0 3px;
+}
+.carouselBlock .grid-item.mediumWidth{
+    width: 164px;
+    margin-top: -9px;
+}
+.carouselBlock .grid-item.mediumWidth1{
+    width: auto;
+    margin-top: 10px;
+}
+.carouselBlock .grid-item.mediumWidth2{
+    width: 164px;
+    margin-top: -9px;
+}
+.calendarCloseBtn{
+    position: relative;
+    height: 1.2rem !important;
+    left: -14%;
+    vertical-align: middle;
+    top: 7px;
+}
+
+    hr {
+      background-color: #fff;
+      border: none;
+      border-top: 5px solid #949393;
+      color: #fff;
+      height: 1px;
+      margin-top: 20px;
+      width: 50%;
+  }
+  .ag-root.ag-layout-normal{
+    border: 1px solid #ced2d9;
+  }
+  div[class*=ag-theme-salt] .ag-cell {
+    line-height: 34px;
+}
+  tbody tr:nth-child(odd), .ag-row-odd{
+    background-color: #eee !important;
+  }
+  
+  tbody tr:nth-child(even) , .ag-row-even{
+    background-color: #fff !important;
+  }
+
+  .stepsBlock tbody tr:nth-child(odd), .ag-row-odd{
+    background-color: #fff !important;
+  }
+  .ag-header-group-cell-label:nth-child(1){
+      text-align: center;
+      margin: 0 auto;
+  }
+ 
+  .ag-header-row.ag-header-row-column-group{
+      background:#cdcdcd;
+  }
+
+  .ag-header-group-cell-label.ag-sticky-label{
+   font-size: 13px;
+  }
+  .cell-fail {
+    text-align: center;
+    font-weight: bold;
+    background: #e52135;
+  }
+.cell-avarage{
+    text-align: center;
+    font-weight: bold;
+    background:#ffecd9;
+  }   
+.cell-pass {
+    text-align: center;
+    font-weight: bold;
+    background: rgb(83 155 131 / 70%)
+  }
+  .saltTooltip{
+      border-color: #2670a9;
+  }
+  .saltTooltip svg path{
+      fill:#2670a9
+  }
+  .saltTooltip svg{
+      width:16px;
+      height:20px;
+      fill:#2670a9
+  }
+  .saltInteractableCard-accentTop{
+      border:2px solid #2670a9;
+  }
+  .circularSteps .palyBtn{
+      background: #fff;
+  }
+  .circularSteps .palyBtn svg{
+      color:#2670a9
+  }
+  .chartYaxisLabel{
+    transform: rotate(90deg);
+    position: relative;
+    left: -49%;
+    top:480px;
+    font-size: 12px;
+
+}
+.saltButton-accented.saltButton-solid{
+    border-radius: 5px;
+}
+.line-container {
+    display: flex;
+    width: 100%;
+    margin: 20px auto;
+    align-items: center;
+  }
+  .line {
+    height: 1px;
+    background: grey;
+    position: relative;
+    width: 24%;
+    display: flex;
+    left: -17px;
+}
+
+  .line.arrow-left:after {
+    position: absolute;
+    content: '';
+    top: -7px;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-top: 7px solid transparent;
+    border-bottom: 7px solid transparent;
+    border-right: 7px solid grey;
+  }
+  .lineChartwrap svg g path{stroke-width: 3;}
+  .lineChartwrap svg g text{text-transform: capitalize;}
+
+  .ag-header-cell-sortable .ag-header-cell-label, div[class*=ag-theme-salt] .ag-row{
+    font-size:12px !important;
+    }
+    .customHeaderCss span, .customHeaderCss .ag-header-group-cell-label{
+        text-align: center;
+        width:100%;
+        font-size: 13px !important;
+    }
+    #globalModelChart-header .saltAccordionHeader-content{
+        font-size: 13px;
+    }
+    ul.toolTipWrapper li{
+        list-style: none;
+        padding: 10px;
+    }
+   
+    .arrow_left, .arrow_right {
+      width: 48%;
+      margin-top: 12px;
+      display: inline-block;
+    }
+    .arrow_right {
+      float: right;
+    }
+    .line {
+      margin-top: 0;
+    width: 99%;
+    background: #2E96FF;
+    height: 2px;
+    float: left;
+    left: 0;
+    }
+    
+    .arrow_left_mode {
+      width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 15px solid #2E96FF;
+    float: left;
+    position: relative;
+    top: -11px;
+    }
+    .arrow_right_mode {
+      width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 15px solid #2E96FF;
+    float: right;
+    position: relative;
+    top: -11px;
+    }
+  @media (min-width: 600px) and (max-width: 1300px) {
+    .carouselBlock .saltInteractableCard {
+ 
+        width: 26%;
+    }
+    .grid-item.leftField1{
+        min-width: 113px;
+    }
+    .stateSuccess {
+        margin-top: -51px;
+    }
+    .saltCard {
+        width: 49%;
+    }
+ }
+
+ @media (min-width: 1770px) and (max-width: 1795px) {
+   
+    .carouselBlock .grid-item.mediumWidth1 {
+        width: auto;
+        margin-top: -10px;
+    }
+ }
+
+ @media (min-width: 1921px) and (max-width: 2560px) {
+   
+    .grid-item.leftField, .grid-item.leftField1{
+        clear: left;
+        margin-top: 10px;
+        width: 152px;
+    }
+
+    .carouselBlock .grid-item.mediumWidth{
+        width: 183px;
+        padding-top: 19px;
+    }
+    .carouselBlock .grid-item.mediumWidth1{
+        margin-top: -2px;
+        width: 150px;
+    }
+    .carouselBlock .grid-item.mediumWidth2 {
+        margin-top: -3px;
+    }
+ }

@@ -1,0 +1,52 @@
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+server:
+  port: 9000
+  servlet:
+    contextPath: /orchestrator-server/api
+app:
+  protocol: http
+  use-cloud-auth: false
+  url:
+    signin: https://api.fedlearn.network/{node}/api/signin
+    signup: https://api.fedlearn.network/{node}/api/signup
+    fedagg: http://localhost:9001/aggregate/api/run-aggregate
+  node:
+    name: network
+    number: 999
+  run-mode-type: Multi-2
+  expired-client-request-minutes: 5
+  aggregate:
+    vendor: flwr
+    strategy: FedAvg
+    total-round: 100
+  schedule:
+    client-aggregation-init:
+      interval: 8000
+    client-aggregation-complete:
+      interval: 8000
+spring:
+  application:
+    name: orchestrator
+  datasource:
+    aggregate:
+      jdbc-url: jdbc:mysql://localhost:3310/fedlearn_orchestrator_aggregator
+      username: ${SPRING_DATASOURCE_AGGREGATE_USERNAME:#{''}}
+      password: ${SPRING_DATASOURCE_AGGREGATE_PASSWORD:#{''}}
+      driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    show-sql: false
+    properties:
+      hibernate:
+        id:
+          new_generator_mappings: false
+        show_sql: false
+        format_sql: false
+    hibernate:
+      ddl-auto: none
+
+clients:
+  list: "BANK1,101,bank1@server.aikya.com;BANK2,102,bank2@server.aikya.com;BANK3,103,bank3@server.aikya.com"

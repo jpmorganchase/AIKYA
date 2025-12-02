@@ -1,0 +1,9 @@
+
+1. client
+
+curl --location 'http://localhost:7000/agent/api/simulation/client' \
+--header 'Content-Type: application/json' \
+--data '{
+    "domainType": "payment",
+    "filePath": "/apps/data/seeds/data_mix_bank1.csv"
+}'

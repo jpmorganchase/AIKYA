@@ -1,0 +1,186 @@
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+app:
+  protocol: http
+  use-cloud-auth: false
+  schedule:
+    workflow-expire:
+      enable: false
+      interval: 240000
+      expired-workflow-minutes: 5
+    predict-init:
+      interval: 3
+    predict:
+      interval: 60000
+    training:
+      interval: 70000
+    aggregation:
+      interval: 90000
+  domains: credit_card_fraud,payment_fraud
+  dashboard-conf:
+  dashboard-detail-conf:
+  url:
+    - name: auth
+      baseUrl: https://api.fedlearn.network
+      mapping:
+        signin: /{node}/api/signin
+        signup: /{node}/api/signup
+        getuser: /api/getuser
+    - name: data
+      baseUrl: http://127.0.0.1:7001/data-load/api
+      mapping:
+        initLoad: /loadLocalData
+    - name: agent
+      baseUrl: http://127.0.0.1:7000/agent/api
+      mapping:
+        initialWeights: /initial-weights
+        predict: /predict
+        training: /training
+    - name: server
+      baseUrl: http://127.0.0.1:9000/orchestrator-server/api
+      mapping:
+        sentModel: /receive
+        receiveModel: /global-model
+        clientRegister: /server-auth/client-register
+        initialGlobalModelWeight: /{domain}/initialGlobalModelWeight
+
+  node:
+    name: bank1
+    number: 101
+    mail: bank1@server.aikya.com
+  service-dependency:
+    data-processor: ${app.url[1].baseUrl}/health
+    fl-agent: ${app.url[2].baseUrl}/health
+    fl-server-orchestrator: ${app.url[3].baseUrl}/health
+  dashboard:
+    - domain: credit_card_fraud
+      mapping:
+        table: domain_credit_card_fraud_data
+        dbColumns:
+          [
+            v1,
+            v2,
+            v3,
+            v4,
+            v5,
+            v6,
+            v7,
+            v8,
+            v9,
+            v10,
+            v11,
+            v12,
+            v13,
+            v14,
+            v15,
+            v16,
+            v17,
+            v18,
+            v19,
+            v20,
+            v21,
+            v22,
+            v23,
+            v24,
+            v25,
+            v26,
+            v27,
+            v28,
+            amount,
+          ]
+        webLabels:
+          [
+            "V1",
+            "V2",
+            "V3",
+            "V4",
+            "V5",
+            "V6",
+            "V7",
+            "V8",
+            "V9",
+            "V10",
+            "V11",
+            "V12",
+            "V13",
+            "V14",
+            "V15",
+            "V16",
+            "V17",
+            "V18",
+            "V19",
+            "V20",
+            "V21",
+            "V22",
+            "V23",
+            "V24",
+            "V25",
+            "V26",
+            "V27",
+            "V28",
+            "Amount",
+          ]
+        flagDbColumn: "class"
+    - domain: payment_fraud
+      mapping:
+        table: domain_payment_fraud_data
+        dbColumns:
+          [
+            DEBITOR_AMOUNT,
+            DEBITOR_GEO_LATITUDE,
+            DEBITOR_GEO_LONGITUDE,
+            DEBITOR_TOWER_LATITUDE,
+            DEBITOR_TOWER_LONGITUDE,
+            CREDITOR_GEO_LATITUDE,
+            CREDITOR_GEO_LONGITUDE,
+            CREDITOR_TOWER_LATITUDE,
+            CREDITOR_TOWER_LONGITUDE,
+            DEBITOR_ACCOUNT_CREATE_TIMESTAMP,
+            CREDITOR_ACCOUNT_CREATE_TIMESTAMP,
+          ]
+        webLabels:
+          [
+            "Debitor Amount",
+            "Debitor Geo Lat",
+            "Debitor Geo Long",
+            "Debitor Tower Lat",
+            "Debitor Tower Long",
+            "Creditor Geo Lat",
+            "Creditor Geo Long",
+            "Creditor Tower Lat",
+            "Creditor Tower Long",
+            "Debitor Acc Creation Timestamp",
+            "Creditor Acc Creation Timestamp",
+          ]
+        flagDbColumn: "FRAUD_FLAG"
+server:
+  port: 8080
+  servlet:
+    contextPath: /orchestrator-cli/api
+spring:
+  application:
+    name: orchestrator
+  datasource:
+    agent:
+      jdbc-url: jdbc:mysql://localhost:3306/fedlearn_orchestrator_agent
+      username: ${SPRING_DATASOURCE_AGENT_USERNAME:#{''}}
+      password: ${SPRING_DATASOURCE_AGENT_USERNAME:#{''}}
+      driver-class-name: com.mysql.cj.jdbc.Driver
+    client:
+      jdbc-url: jdbc:mysql://localhost:3306/fedlearn_client
+      username: ${SPRING_DATASOURCE_AGENT_USERNAME:#{''}}
+      password: ${SPRING_DATASOURCE_AGENT_USERNAME:#{''}}
+      driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    show-sql: false
+    properties:
+      hibernate:
+        id:
+          new_generator_mappings: false
+        show_sql: false
+        format_sql: false
+    hibernate:
+      ddl-auto: none

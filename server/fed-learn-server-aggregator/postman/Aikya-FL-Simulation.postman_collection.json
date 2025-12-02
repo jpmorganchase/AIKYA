@@ -1,0 +1,185 @@
+{
+	"info": {
+		"_postman_id": "04257440-24a4-4d89-8d21-8fcc32562079",
+		"name": "Aikya-FL-Simulation",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6711410"
+	},
+	"item": [
+		{
+			"name": "client",
+			"item": [
+				{
+					"name": "simulation-client",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"domainType\": \"payment\",\r\n    \"filePath\": \"/apps/data/seeds/data_mix_bank1.csv\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:7000/agent/api/simulation/client",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7000",
+							"path": [
+								"agent",
+								"api",
+								"simulation",
+								"client"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "server",
+			"item": [
+				{
+					"name": "simulation-run-aggregate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"domainType\": \"payment_fraud\",\r\n    \"num_rounds\": 7,\r\n    \"strategy\": [\r\n        \"FedAvg\"\r\n    ],\r\n    \"vendor\": \"flwr\",\r\n    \"workflowTraceId\": \"69u37f5b-MTAxXX-322a\",\r\n    \"modelId\": 3,\r\n    \"groupHash\": \"8a922f71\",\r\n    \"clients\": [\r\n        {\r\n            \"clientId\": 102,\r\n            \"data\": {\r\n                \"parameters\": \"SDRzSUFMTlg0R1lDLzNWVGZWak5keFMvVjYvM1NsRzNMYXZaTGVtRkt5S2k3dmY4cUZaNnN4U3hwUFRxdW5ydjVpMnhLZFZObHR5ZnlKaWVJbXBVVDVPayt6MC9hZWpGMkcwTHRSa3F0bWk3VzdFMmUybm8yWCtjUDg3em5PZDh6dm1jNTN5ZXowZTZCM2ZyODE3Rk90YWgwRHdwSXpGbG0xTk1jbHFjVTJKR2dtSmpWRnBhMURhMjBDZ3lMUzRtT1NsZGtaWVJvMkJWYktIZUt5QmJhSkFVT3c1UnNmNjhQYXduUDVyTlk0TlpCMysrdjU2L0tKZVY2UmJxeFNxMnBjUzlISm9RNzhJcTg4ZjdPb1Y4S2J0OCtYSy9zUmZ4S3ZuekZHeTAwbU0vbjhkNzEzMEVUb3JIVUpMTzRQVmFNYmREdmc5djluZERXMjhYRmJWUDQ0NTZyVWRPZUE1N3ZYTWhaRlNmMDdGTmcralZZZ1JGRng0ZUhZQVFMcHNJcjl0eDhzVHQ2UEhYS2k3enhtVUlabTA0VTFOYlRsa2N6dGxVejRaV3kvdlE3bjRVdGpwR2NlRjJGbWdkSzBiYlBMbDBkZDVsMVBZWXcrZURjaEtSNG9hVEdRYnFEZHpnOEx3NlBINjdHbDB1V25IRnY5bVNucllPdUtwL0ROMTdQY0NvOEFaS0FsM2hhY0F5dENudFJja0NZODdyZmpqZVZkK2g5c1hOOElQblVUeGM5QndXM2JURXFndDdvZGxKd0NUYjdjV0dWRzhjMHkwbFdkTlZkSHRtRnFaS2xYaXc0eFFaWHBXSGxXYjl5Sy93d1pnK0hZSm1TQXhibkhHWktnOHJCR0VZWG5FSEhwVitSdTE5cmtESjVtVkVTejFSUE9RTU52bDZETjhvRjJaUG5vRjNCeU14OE81ZXFXNUhCQ1dXTzZEbmhMZlV4TFFmZmF2a01NUEFuQmljbEJLVFM0K2hZczVTbk9EWlFnUS9sMkdweEFQTHpPVDBzc1ZaTmYvOVBlcndEU3lFelMrbDdBdGxaRG95L1pjU3l3ei9GMWowb3BpczlBeEsvYVVSZUJrNTRKNS9rcmdkYllCL2NrVnFRNTlGZUtocm1BenRVNEZWekRsb2VqQkk0eStia000cHg5UnhDZllRV3pFSkFpTnJRTmRhQU5hU1pySXJOaDN5a2hvZzBMUVMzc0RtTDh4OXllY2gxdUh4bHF4WndxMTRkSUx1anRUaEFvSmI2RXhOQ3F5MFBZL3lJZ3JsZHZVdzczQ25kTTIzOS9Dc1ZzVDRiQll5c3hQNGpDYkVCV1diaGpDbDRUeG1KcG8yVjkxU29MRnJsMXI0UVIrTytCZ3ovVDF6R0VkdkNRQnR4T1J6OXVBU2RBNno5VGc4WUxnQ3AveTZCUmZPM1lMR1ViMHc4VW9NYzZ0UndiQ2lNNWpTVkVDK2Ftb0Y3WVlsT00zN1l5Sm9XMHMzVmhaalplNUUrRVN3bFg1ek13b0ZDN0tndXp3VGhhRUY0QmZxQ2p1REZzTTdSU1Z3SnZ0SDJsL1hqKzJCY1hTYmJ3bUVwdGZTUDl4enNUcHlNenozOWNFd2JTcTJmOW9MUXVlNWFGVmhnbkpTRDh4dEpkYU01TUY2V1NNTU5qNmhmVlVDOThSNzY5QnJBUTlxWjdoUWVjMkhUTkFORTJacCt3cm1RUDBwMUhJU21xOVVRVW5MUFRJbEtSYXY3VjJNcytvcVNQWjNlcERQcXVDTy95WXcrQ1FBUW0rWDR0dCtOWGhiK0JBdWFPWXdaZ2MvcHN5OFNkUm9XaEJadTJvVGRPdU5xTVhIOUxuZkMvSmh4YTN6MG9Fak9weTVnVE5YK2RTUWE5clFLdjB5eGc2aWpTdGhqQ3RIaVNZV0ovNmloQ2Z0QkNkd2ZLaE1xQ0gzcmQzQWN1ZzA1Snh1aEt3OUowaHdnb3o0ZWF4Rml3NE5QZjYrQVQ3KzR6N08ycXl2N3FqZENRRitYMU5UcjJ4YzVjckQ5SDgrd3orSG5zQmJyWk9JNWdGaVRlaVRpNTNSMTJIa1NnbjBDRS9pY1VrdE5CUlV3TlJMSytISVJYTW14eW9aSWxJOFVHLzdLQ2k5bnRMaHBUTXhvZjFkOG16Z0oyaUlNOEF6WFh3bXkzNlFERjFUUVZoa3RidmhSaHNJYVB3QTZoMitBSzFGRHF3SlhraGFCY01rNlZBRXV2UkZ2UGpMdjZTdUtad21IcktGMDJlTHNFM2ZFSnhWWmhoaXFLQXl1eU53YThvTm5DRWRBRkhRSW1EbTJzTENrSjNnVU9BSDY1WU5OL3RjNUVHVWR5TWNDRi9LektkVEdWN0N6OFQzbEFQbWhHbXhabGNROW1sa2lCa0R4THBuRnZEcXlxQ3p0SUJPYnh1RmgyYlh3WEh4R0drN3Z3OEhkdnhLNjVjL2tQckd5MkdsalFhZmFadGd2OGlLMlZvbVpseTZrVHBXVlV0bnB6amgzOCsyVTQzbUxIcTNEbUhMODFUeWVnc0p4dzNyY1BYUEhIalB6UWpzNThkRHBzODhDSHQyaUFSV2I2SGg1V0lRaFViRDNkRVF1QmJQZjRQdGhmNzgzUEU5YTl3c09OM083OUYzWmdGWFZGd0pqa2NXTVZjaWlpQkpsQTJ1NXV1WXB2SnVXT0JteWJ4K0QzLzhHbDMxMUxKWFRIRk8vd0cxblhwdmpRWUFBQT09\",\r\n                \"metrics\": {\r\n                    \"accuracy\": 0.9370257854,\r\n                    \"loss\": 0.1701263338\r\n                },\r\n                \"num_examples\": 16\r\n            }\r\n        },\r\n        {\r\n            \"clientId\": 101,\r\n            \"data\": {\r\n                \"parameters\": \"SDRzSUFMTlg0R1lDLzNWVGZWak5keFMvVjYvM1NsRzNMYXZaTGVtRkt5S2k3dmY4cUZaNnN4U3hwUFRxdW5ydjVpMnhLZFZObHR5ZnlKaWVJbXBVVDVPayt6MC9hZWpGMkcwTHRSa3F0bWk3VzdFMmUybm8yWCtjUDg3em5PZDh6dm1jNTN5ZXowZTZCM2ZyODE3Rk90YWgwRHdwSXpGbG0xTk1jbHFjVTJKR2dtSmpWRnBhMURhMjBDZ3lMUzRtT1NsZGtaWVJvMkJWYktIZUt5QmJhSkFVT3c1UnNmNjhQYXduUDVyTlk0TlpCMysrdjU2L0tKZVY2UmJxeFNxMnBjUzlISm9RNzhJcTg4ZjdPb1Y4S2J0OCtYSy9zUmZ4S3ZuekZHeTAwbU0vbjhkNzEzMEVUb3JIVUpMTzRQVmFNYmREdmc5djluZERXMjhYRmJWUDQ0NTZyVWRPZUE1N3ZYTWhaRlNmMDdGTmcralZZZ1JGRng0ZUhZQVFMcHNJcjl0eDhzVHQ2UEhYS2k3enhtVUlabTA0VTFOYlRsa2N6dGxVejRaV3kvdlE3bjRVdGpwR2NlRjJGbWdkSzBiYlBMbDBkZDVsMVBZWXcrZURjaEtSNG9hVEdRYnFEZHpnOEx3NlBINjdHbDB1V25IRnY5bVNucllPdUtwL0ROMTdQY0NvOEFaS0FsM2hhY0F5dENudFJja0NZODdyZmpqZVZkK2g5c1hOOElQblVUeGM5QndXM2JURXFndDdvZGxKd0NUYjdjV0dWRzhjMHkwbFdkTlZkSHRtRnFaS2xYaXc0eFFaWHBXSGxXYjl5Sy93d1pnK0hZSm1TQXhibkhHWktnOHJCR0VZWG5FSEhwVitSdTE5cmtESjVtVkVTejFSUE9RTU52bDZETjhvRjJaUG5vRjNCeU14OE81ZXFXNUhCQ1dXTzZEbmhMZlV4TFFmZmF2a01NUEFuQmljbEJLVFM0K2hZczVTbk9EWlFnUS9sMkdweEFQTHpPVDBzc1ZaTmYvOVBlcndEU3lFelMrbDdBdGxaRG95L1pjU3l3ei9GMWowb3BpczlBeEsvYVVSZUJrNTRKNS9rcmdkYllCL2NrVnFRNTlGZUtocm1BenRVNEZWekRsb2VqQkk0eStia000cHg5UnhDZllRV3pFSkFpTnJRTmRhQU5hU1pySXJOaDN5a2hvZzBMUVMzc0RtTDh4OXllY2gxdUh4bHF4WndxMTRkSUx1anRUaEFvSmI2RXhOQ3F5MFBZL3lJZ3JsZHZVdzczQ25kTTIzOS9Dc1ZzVDRiQll5c3hQNGpDYkVCV1diaGpDbDRUeG1KcG8yVjkxU29MRnJsMXI0UVIrTytCZ3ovVDF6R0VkdkNRQnR4T1J6OXVBU2RBNno5VGc4WUxnQ3AveTZCUmZPM1lMR1ViMHc4VW9NYzZ0UndiQ2lNNWpTVkVDK2Ftb0Y3WVlsT00zN1l5Sm9XMHMzVmhaalplNUUrRVN3bFg1ek13b0ZDN0tndXp3VGhhRUY0QmZxQ2p1REZzTTdSU1Z3SnZ0SDJsL1hqKzJCY1hTYmJ3bUVwdGZTUDl4enNUcHlNenozOWNFd2JTcTJmOW9MUXVlNWFGVmhnbkpTRDh4dEpkYU01TUY2V1NNTU5qNmhmVlVDOThSNzY5QnJBUTlxWjdoUWVjMkhUTkFORTJacCt3cm1RUDBwMUhJU21xOVVRVW5MUFRJbEtSYXY3VjJNcytvcVNQWjNlcERQcXVDTy95WXcrQ1FBUW0rWDR0dCtOWGhiK0JBdWFPWXdaZ2MvcHN5OFNkUm9XaEJadTJvVGRPdU5xTVhIOUxuZkMvSmh4YTN6MG9Fak9weTVnVE5YK2RTUWE5clFLdjB5eGc2aWpTdGhqQ3RIaVNZV0ovNmloQ2Z0QkNkd2ZLaE1xQ0gzcmQzQWN1ZzA1Snh1aEt3OUowaHdnb3o0ZWF4Rml3NE5QZjYrQVQ3KzR6N08ycXl2N3FqZENRRitYMU5UcjJ4YzVjckQ5SDgrd3orSG5zQmJyWk9JNWdGaVRlaVRpNTNSMTJIa1NnbjBDRS9pY1VrdE5CUlV3TlJMSytISVJYTW14eW9aSWxJOFVHLzdLQ2k5bnRMaHBUTXhvZjFkOG16Z0oyaUlNOEF6WFh3bXkzNlFERjFUUVZoa3RidmhSaHNJYVB3QTZoMitBSzFGRHF3SlhraGFCY01rNlZBRXV2UkZ2UGpMdjZTdUtad21IcktGMDJlTHNFM2ZFSnhWWmhoaXFLQXl1eU53YThvTm5DRWRBRkhRSW1EbTJzTENrSjNnVU9BSDY1WU5OL3RjNUVHVWR5TWNDRi9LektkVEdWN0N6OFQzbEFQbWhHbXhabGNROW1sa2lCa0R4THBuRnZEcXlxQ3p0SUJPYnh1RmgyYlh3WEh4R0drN3Z3OEhkdnhLNjVjL2tQckd5MkdsalFhZmFadGd2OGlLMlZvbVpseTZrVHBXVlV0bnB6amgzOCsyVTQzbUxIcTNEbUhMODFUeWVnc0p4dzNyY1BYUEhIalB6UWpzNThkRHBzODhDSHQyaUFSV2I2SGg1V0lRaFViRDNkRVF1QmJQZjRQdGhmNzgzUEU5YTl3c09OM083OUYzWmdGWFZGd0pqa2NXTVZjaWlpQkpsQTJ1NXV1WXB2SnVXT0JteWJ4K0QzLzhHbDMxMUxKWFRIRk8vd0cxblhwdmpRWUFBQT09\",\r\n                \"metrics\": {\r\n                    \"accuracy\": 0.9370257854,\r\n                    \"loss\": 0.1701263338\r\n                },\r\n                \"num_examples\": 16\r\n            }\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9001/aggregate/api/run-aggregate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9001",
+							"path": [
+								"aggregate",
+								"api",
+								"run-aggregate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "inspect-aggregate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"domainType\":\"payment_fraud\",\"num_rounds\":1,\"strategy\":[\"FedAvg\"],\"vendor\":\"flwr\",\"workflowTraceId\":\"450c73e7-MTAxXX-0d75\",\"modelId\":3,\"groupHash\":\"9741710c\",\"clients\":[{\"clientId\":101,\"data\":{\"parameters\":\"SDRzSUFMTlg0R1lDLzNWVGZWak5keFMvVjYvM1NsRzNMYXZaTGVtRkt5S2k3dmY4cUZaNnN4U3hwUFRxdW5ydjVpMnhLZFZObHR5ZnlKaWVJbXBVVDVPayt6MC9hZWpGMkcwTHRSa3F0bWk3VzdFMmUybm8yWCtjUDg3em5PZDh6dm1jNTN5ZXowZTZCM2ZyODE3Rk90YWgwRHdwSXpGbG0xTk1jbHFjVTJKR2dtSmpWRnBhMURhMjBDZ3lMUzRtT1NsZGtaWVJvMkJWYktIZUt5QmJhSkFVT3c1UnNmNjhQYXduUDVyTlk0TlpCMysrdjU2L0tKZVY2UmJxeFNxMnBjUzlISm9RNzhJcTg4ZjdPb1Y4S2J0OCtYSy9zUmZ4S3ZuekZHeTAwbU0vbjhkNzEzMEVUb3JIVUpMTzRQVmFNYmREdmc5djluZERXMjhYRmJWUDQ0NTZyVWRPZUE1N3ZYTWhaRlNmMDdGTmcralZZZ1JGRng0ZUhZQVFMcHNJcjl0eDhzVHQ2UEhYS2k3enhtVUlabTA0VTFOYlRsa2N6dGxVejRaV3kvdlE3bjRVdGpwR2NlRjJGbWdkSzBiYlBMbDBkZDVsMVBZWXcrZURjaEtSNG9hVEdRYnFEZHpnOEx3NlBINjdHbDB1V25IRnY5bVNucllPdUtwL0ROMTdQY0NvOEFaS0FsM2hhY0F5dENudFJja0NZODdyZmpqZVZkK2g5c1hOOElQblVUeGM5QndXM2JURXFndDdvZGxKd0NUYjdjV0dWRzhjMHkwbFdkTlZkSHRtRnFaS2xYaXc0eFFaWHBXSGxXYjl5Sy93d1pnK0hZSm1TQXhibkhHWktnOHJCR0VZWG5FSEhwVitSdTE5cmtESjVtVkVTejFSUE9RTU52bDZETjhvRjJaUG5vRjNCeU14OE81ZXFXNUhCQ1dXTzZEbmhMZlV4TFFmZmF2a01NUEFuQmljbEJLVFM0K2hZczVTbk9EWlFnUS9sMkdweEFQTHpPVDBzc1ZaTmYvOVBlcndEU3lFelMrbDdBdGxaRG95L1pjU3l3ei9GMWowb3BpczlBeEsvYVVSZUJrNTRKNS9rcmdkYllCL2NrVnFRNTlGZUtocm1BenRVNEZWekRsb2VqQkk0eStia000cHg5UnhDZllRV3pFSkFpTnJRTmRhQU5hU1pySXJOaDN5a2hvZzBMUVMzc0RtTDh4OXllY2gxdUh4bHF4WndxMTRkSUx1anRUaEFvSmI2RXhOQ3F5MFBZL3lJZ3JsZHZVdzczQ25kTTIzOS9Dc1ZzVDRiQll5c3hQNGpDYkVCV1diaGpDbDRUeG1KcG8yVjkxU29MRnJsMXI0UVIrTytCZ3ovVDF6R0VkdkNRQnR4T1J6OXVBU2RBNno5VGc4WUxnQ3AveTZCUmZPM1lMR1ViMHc4VW9NYzZ0UndiQ2lNNWpTVkVDK2Ftb0Y3WVlsT00zN1l5Sm9XMHMzVmhaalplNUUrRVN3bFg1ek13b0ZDN0tndXp3VGhhRUY0QmZxQ2p1REZzTTdSU1Z3SnZ0SDJsL1hqKzJCY1hTYmJ3bUVwdGZTUDl4enNUcHlNenozOWNFd2JTcTJmOW9MUXVlNWFGVmhnbkpTRDh4dEpkYU01TUY2V1NNTU5qNmhmVlVDOThSNzY5QnJBUTlxWjdoUWVjMkhUTkFORTJacCt3cm1RUDBwMUhJU21xOVVRVW5MUFRJbEtSYXY3VjJNcytvcVNQWjNlcERQcXVDTy95WXcrQ1FBUW0rWDR0dCtOWGhiK0JBdWFPWXdaZ2MvcHN5OFNkUm9XaEJadTJvVGRPdU5xTVhIOUxuZkMvSmh4YTN6MG9Fak9weTVnVE5YK2RTUWE5clFLdjB5eGc2aWpTdGhqQ3RIaVNZV0ovNmloQ2Z0QkNkd2ZLaE1xQ0gzcmQzQWN1ZzA1Snh1aEt3OUowaHdnb3o0ZWF4Rml3NE5QZjYrQVQ3KzR6N08ycXl2N3FqZENRRitYMU5UcjJ4YzVjckQ5SDgrd3orSG5zQmJyWk9JNWdGaVRlaVRpNTNSMTJIa1NnbjBDRS9pY1VrdE5CUlV3TlJMSytISVJYTW14eW9aSWxJOFVHLzdLQ2k5bnRMaHBUTXhvZjFkOG16Z0oyaUlNOEF6WFh3bXkzNlFERjFUUVZoa3RidmhSaHNJYVB3QTZoMitBSzFGRHF3SlhraGFCY01rNlZBRXV2UkZ2UGpMdjZTdUtad21IcktGMDJlTHNFM2ZFSnhWWmhoaXFLQXl1eU53YThvTm5DRWRBRkhRSW1EbTJzTENrSjNnVU9BSDY1WU5OL3RjNUVHVWR5TWNDRi9LektkVEdWN0N6OFQzbEFQbWhHbXhabGNROW1sa2lCa0R4THBuRnZEcXlxQ3p0SUJPYnh1RmgyYlh3WEh4R0drN3Z3OEhkdnhLNjVjL2tQckd5MkdsalFhZmFadGd2OGlLMlZvbVpseTZrVHBXVlV0bnB6amgzOCsyVTQzbUxIcTNEbUhMODFUeWVnc0p4dzNyY1BYUEhIalB6UWpzNThkRHBzODhDSHQyaUFSV2I2SGg1V0lRaFViRDNkRVF1QmJQZjRQdGhmNzgzUEU5YTl3c09OM083OUYzWmdGWFZGd0pqa2NXTVZjaWlpQkpsQTJ1NXV1WXB2SnVXT0JteWJ4K0QzLzhHbDMxMUxKWFRIRk8vd0cxblhwdmpRWUFBQT09\",\"metrics\":{},\"num_examples\":2500}}]}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9001/aggregate/api/inspect-aggregate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9001",
+							"path": [
+								"aggregate",
+								"api",
+								"inspect-aggregate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "flwr-strategies",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"followRedirects": true,
+						"disableUrlEncoding": false,
+						"disableCookies": false
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:9001/aggregate/api/flwr-strategies",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9001",
+							"path": [
+								"aggregate",
+								"api",
+								"flwr-strategies"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "simulation-e2e",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"domainType\": \"payment\",\r\n    \"filePath\": \"/apps/data/seeds/data_mix_bank1.csv\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7000/agent/api/simulation/e2e",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"agent",
+						"api",
+						"simulation",
+						"e2e"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

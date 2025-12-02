@@ -1,0 +1,84 @@
+
+
+1
+Load:
+POST:
+/loadLocalData
+
+{
+    "fileName" : "" 
+}
+
+response:
+{
+    "success": true, 
+    "message": "success copy seed to data"
+}
+
+List:
+data_init_bank1.csv
+
+jpm - bank1 
+citi - bank2
+dbs - bank3 
+
+2
+API - check 
+GET:
+getPendingWorkflow
+response:
+[{
+    "workflowStatus":"Complete"
+    "steps":[
+        "step" - 1
+        "stepStatus" = 'Complete'
+    ]
+}
+]
+
+3 
+API: 
+GET:
+/trainLocalModel
+
+
+4
+Get -- /reset ->  clean up db
+
+
+
+
+
+1
+loadLocalData - called
+
+getPendingWorkflow
+
+step1, status -> "" - 5min
+
+DISABLED (LOCAL BUTTON, TRAIN BUTTON AND RESET BUTTON)
+
+
+after 
+step1 , complate
+step2 - status -> init
+
+{LOCAL BUTTON}, TRAIN BUTTON AND RESET BUTTON
+
+2 trainLocalModel
+
+DISABLED (LOCAL BUTTON, TRAIN BUTTON AND RESET BUTTON)
+
+getPendingWorkflow
+[
+
+]
+or 
+workflowStatus : Complete
+
+LOCAL BUTTON,  {TRAIN BUTTON} AND RESET BUTTON 
+
+
+
+TRAIN:
+/retrain/batchId

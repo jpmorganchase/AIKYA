@@ -1,0 +1,36 @@
+Pipfile.lock
+__pycache__
+.pytest_cache
+.coverage
+logs
+*.pem
+node_modules*
+# package-lock.json
+logs/
+.minio*
+object-storage/
+.idea
+dev-setup/last_run.log
+dev-setup/scripts/last_run.log
+dev-setup/scripts/environments/dev/hosts
+dev-setup/scripts/roles/access/files/*
+dev-setup/scripts/.aws/
+dev-setup/scripts/instance.csv
+dev-setup/scripts/contract.csv
+dev-setup/scripts/vault.csv
+dev-setup/scripts/tmp/
+dev-setup/scripts/.provisioned
+/dev-setup/scripts/.bt_*
+/dev-setup/scripts/.stopped
+
+terraform/.terraform/*
+terraform/*.lock.hcl
+terraform/*.lock.info
+terraform/*.tfstate
+terraform/*.tfstate.backup
+stubs/node_modules/
+build/
+
+# Build optimization cache files
+.eslintcache
+.cache/

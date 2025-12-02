@@ -1,0 +1,43 @@
+[
+    {
+        "headerName": "Batch Number",
+        "field": "name",
+        "flex": 1
+    },
+    {
+        "headerName": "Anomaly Description",
+        "field": "anomalyDesc",
+        "filter": "agMultiColumnFilter"
+    },
+    {
+        "headerName": "Model Version",
+        "field": "modelVersion",
+        "filter": "agMultiColumnFilter"
+    },
+    {
+        "headerName": "Total",
+        "field": "totalRecordCount",
+        "type": "numericColumn"
+    },
+    {
+        "headerName": "Predicted Anomalies",
+        "field": "anomalousRecordCount",
+        "filter": "agMultiColumnFilter"
+    },
+    {
+        "headerName": "Actual Anomalies",
+        "field": "actualAnomalousRecordCount",
+        "filter": "agMultiColumnFilter"
+    },
+    {
+        "headerName": "Created Date",
+        "field": "createdDate",
+        "filter": "agMultiColumnFilter"
+    },
+    {
+        "headerName": "Action",
+        "field": "action",
+        "filter": "agSetColumnFilter",
+        "hide": true
+    }
+]

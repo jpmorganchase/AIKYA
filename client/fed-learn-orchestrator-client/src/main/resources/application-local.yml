@@ -1,0 +1,4 @@
+app:
+  node:
+    name: bank1
+    number: 101

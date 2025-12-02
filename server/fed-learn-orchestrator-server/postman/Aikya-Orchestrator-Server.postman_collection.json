@@ -1,0 +1,873 @@
+{
+	"info": {
+		"_postman_id": "988152a0-42a6-4818-b6bc-bd9d867b1cd6",
+		"name": "Aikya-Orchestrator-Server",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6711410"
+	},
+	"item": [
+		{
+			"name": "receive",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"followRedirects": true,
+				"disableUrlEncoding": false,
+				"disableCookies": false
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"id\":\"9d5444d1\",\"header\":{\"timestamp\":1726484893454,\"event_type\":\"OFL-C5\",\"workflow_trace_id\":\"d769a02f-MTAxXX-d8fe\",\"domain\":\"payment_fraud\",\"status\":\"Initial\",\"is_encrypted\":false},\"body\":{\"data\":[{\"clientId\":\"101\",\"parameters\":\"SDRzSUFDUVI2R1lDLzNWVGUxVE1lUlNmbVpwZTBvUmFaZHVFSkxWU2hOVHZleWNsMGRpUmhDUWJ2VGVsenFqSVkxV25wb2RaU1Q5Q1dMV3RNMml6dlV2enZkTkRLcEljZStTUlYyZmxjV1FuUmxKaG83UC9yZnZIdmVlZWUrL25jOC81bkUrUzV1RVVMYzZYMk1SYXk0eTN4VWZISnRvRngwaEM3YUxqbytKKzJpS1JiRWxrWmZxQmt0RGdtRzNiNHlUeHdYRnNMaXZqZjFsa1pkcmJRc1pXY2xrUko0MTE1d2F4NmF3UGF5M2lpdmdpSXlrYm9TbmpoOFFseG9aK1B1S0ZPYktaR1dOekRSbVhZY1Zpc2RlbjBmaVNSSnc0TmlqVDdTQ1h3NG4wOWNQejNSYkt5QVAxT0xEK0ZXWUdPQ28zbmNrQXkrbko2SVpadEdEL1kvcjdUUXRsVGRNMmNQZnNwWjkwdk5BUlU4Q0lhd2lQeXcvQWJOa3lqSE43cFFqY3hWTUdTNS9nOEtvU0hQU2NyQ3hjVTRwcHNTR29kWGtwVmpTK0EzL1BYdUM0NWxZbktXenFqTHBQMDZhb1RwTHk2Q0Q1WitHM2VQRzFBemFtamxEM1NpZU1zajVIVFN6K1JIbDNoOHZQMm5sb05TTEZyblZ5NG1XYmovZTdsa0JoVGlzYWZraUYrMzdaYU41Mm1uQk9EdFRkZmFaREx0c0xzRmZlQXNYYWQxSHRiNExOaWpkMFgxVU02WmJwQ1FlcnhUZ1UzSWtldFR5VUgrY0lqYzFrb0Z0N2tVcDltMEJyeGxFZzFoN2dheHVMWFdiYklmRkdQRG1WZEJsdVVWdVVENzNGNlNOdGdPb1R1TklqRE04Zm1na09CVlZNdTdBTUxZNnNVYXhvYW9JWm04OWlSY29KeFJyR0h2cjJWaERYWnFGQzlwRUhHNjdmUUUrM0RYakxOaHBQRFQrR2hwam5JTm5sRDJZUE82aGxZUzJWM1R5SUVVVlJzSEdjRzRwbUNTQkFjQlhNZmM4Q082cE1oRWFFMW1lSkkzVCtFOWhvdERITWRQZXV0TTJFMDNjb0pJem5nV3E4STdTV1pzRTdjVDF0TnhCUXY3b2lGMVVUSDFyTEhHQUtUb0hEQlExTTd0UjZjUE5aUUJZTk9ZQ2JhaVZ4L0dNZUZPL2hLekkrSmtQYjhXTmZZeFBwU1QvenVWbG9jRGc5dTB2dzRyRnZNRytUREptQkx2QXRFWUlnSmg5dFQvWkRXUEZxM093eUJOTGlZcXgxR1FlOTc4ZEJ1N0UxMFBjNnd1bmVEL0IybjRWeTBHbVNjTG5wSmNMV09NTTdYVTA4ZFRzVnMwcTU1SVNORkt6MkdxTkhaU0MwN0o4eFduK0dqYXZhTU1QQlM2RWluc0JiWGdkQkdWeXd1TVlUS3FYaFVMREVCa3o5RHBHV2ZXTG9YMjBETmI0eXFLenBRTDgzV2FDelB4dDk1cFpqMFJON1lYM3FXL1NPY1llZ3pmbWdOY0VaVTAydWdJdEdJenJWU2pGS0Y3QzltNEsra3hhcWZtekdwVmZUc1hmeEVtWmZneFg4ME1lQVRhRTVxYyt6d3lmWmM4aHd6bnlzU2xwUFN1ZEVFb09ldWFqZWtvVDBjQ1kwVEJLZzFieEFhbGEzR0JLY3lrRzk0d0drMTl5aXFnblRHSEczREU3YWVlTnR0VFpZVFp5cXVQWkNBNDdzVENBR1IzVm9RbTBDY25mZVpCN1pKWUJ1bEQrSzN6MEVYNjlxeUJJMzBIRzlwbVJ0YVRBc1hKV0x4cGZTRlZyUndSQVU0UUd4SjkrU1FmMjdFTEluR2QvMlYwUHM0UXA4d1J1aEdjL3ZnVHkyaDZiNmgwT25LVXNWZlFMSUdid09YSU53M0NsZmhGZWFCc2pncWxsTWg5MHhNTWdIRkhlbG9MMWE1RExpbmdjbkxuU2k1R1VGS3ZyV3dLQlJNaFJtYUtOZ2hpVyt2bE9PeFRQL2dvY1gwbUNYVnpJcDYyOEUzMHdLekRWSFVBOEhBVWZuT3laOVpBN3NYanVIT3ZvMUs4SjJHY0M2NXBuZy9IUUZUVEUvQUVkREpzUDhLZk5SNWZnTDdINlFEZm8wRUhvQ3BvSmM1d0VVZldpRm90T0dkR2RranN0eDcxYkY2L3dxU0ZNZmdvTVR6bUdCeVJsMDVmQ2hYN29ZdWVMcnlOenZoTUdHWjZSeFlpUmp6SnJpdW5NcGFKaFhESytpeTNESUxCczQ5eVE0S2YwNHZPZ0loUXNwQWFSeCtDVzVWRFdaT0M5OFRPVGxPUkFRN29TdVcxdW8zcWRtZWpZOEh0bVIvcnFBWlI2a1JaeU8wUGFJWkpOSXZHSG9EdWMvMXRKMmxjK29YdXVnNFBzOGdyWTh2UExhbUp3aHR5RXFVY0drTlYrbnFpZjNYY3pQNlJPblg2Y0lBeDc5VFJ1M3F0R29aQ1dSK0lTaDhaWWl1TUsvalA5dkliMHh3MXB6K0dmcmRtZ09NQTc1QWlKdWNZWnU3alJpWXBla01PdWZEWWFkamN6ZElURjBSNWFRcjZDSXVOSXhuS2U5U1JBN1gwUElpUWtsVDIvTlUvWW9LOEV5WndCMGYxdWdETjFqTDdUa1YrSXlJK2xYRE0wZCswWlR5ZGY3OG0rbzNiOEhpa2JhalFZQUFBPT0=\",\"metrics\":null,\"numExamples\":2500}]}}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9000/orchestrator-server/api/receive",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"orchestrator-server",
+						"api",
+						"receive"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "expirePendingClients",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"followRedirects": true,
+				"disableUrlEncoding": false,
+				"disableCookies": false
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9000/orchestrator-server/api/expire-pending-clients",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"orchestrator-server",
+						"api",
+						"expire-pending-clients"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "check-requests",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"followRedirects": true,
+				"disableUrlEncoding": false,
+				"disableCookies": false
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"workflowTraceIds\": [\"o56eed9e-MTAyXX-65dc\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9000/orchestrator-server/api/check-requests",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"orchestrator-server",
+						"api",
+						"check-requests"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "reset",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"followRedirects": true,
+				"disableUrlEncoding": false,
+				"disableCookies": false
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9000/orchestrator-server/api/reset",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"orchestrator-server",
+						"api",
+						"reset"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "global-model",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"followRedirects": true,
+				"disableUrlEncoding": false,
+				"disableCookies": false
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"id\":\"eb0ee76e\",\"header\":{\"timestamp\":1722017673130,\"event_type\":\"OFL-C6\",\"workflow_trace_id\":\"6c563a2c-MTAzXX-7495\",\"domain\":\"payment_fraud\",\"status\":\"Initial\",\"is_encrypted\":false},\"body\":{\"data\":[{\"clientId\":\"101\",\"version\":1,\"size\":1,\"model\":\"payment\"}]}}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9000/orchestrator-server/api/global-model",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"orchestrator-server",
+						"api",
+						"global-model"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "client-register",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"followRedirects": true,
+				"disableUrlEncoding": false,
+				"disableCookies": false
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"clientName\": \"BANK1\",\r\n   \"clientId\": 101,\r\n    \"email\": \"bank1@server.aikya.com\",\r\n    \"consentRecord\": false,\r\n    \"complianceStatus\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9000/orchestrator-server/api/server-auth/client-register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"orchestrator-server",
+						"api",
+						"server-auth",
+						"client-register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "latestWorkflowSummary-payment",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": []
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"followRedirects": true,
+				"disableUrlEncoding": false,
+				"disableCookies": false
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:9000/orchestrator-server/api/payment/latestWorkflowSummary",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "9000",
+					"path": [
+						"orchestrator-server",
+						"api",
+						"payment",
+						"latestWorkflowSummary"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "latestWorkflowSummary-credit",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"followRedirects": true,
+				"disableUrlEncoding": false,
+				"disableCookies": false
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:9000/orchestrator-server/api/credit_card_fraud/latestWorkflowSummary",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "9000",
+					"path": [
+						"orchestrator-server",
+						"api",
+						"credit_card_fraud",
+						"latestWorkflowSummary"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "contributions",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"followRedirects": true,
+				"disableUrlEncoding": false,
+				"disableCookies": false
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:9000/orchestrator-server/api/payment/contributions",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "9000",
+					"path": [
+						"orchestrator-server",
+						"api",
+						"payment",
+						"contributions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "initialGlobalModelWeight-payment",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"followRedirects": true,
+				"disableUrlEncoding": false,
+				"disableCookies": false
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:9000/orchestrator-server/api/payment/initialGlobalModelWeight",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "9000",
+					"path": [
+						"orchestrator-server",
+						"api",
+						"payment",
+						"initialGlobalModelWeight"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "initialGlobalModelWeight-credit_card_fraud",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"followRedirects": true,
+				"disableUrlEncoding": false,
+				"disableCookies": false
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:9000/orchestrator-server/api/credit_card_fraud/initialGlobalModelWeight",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "9000",
+					"path": [
+						"orchestrator-server",
+						"api",
+						"credit_card_fraud",
+						"initialGlobalModelWeight"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "initialGlobalModelWeight-payment_fraud",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"followRedirects": true,
+				"disableUrlEncoding": false,
+				"disableCookies": false
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:9000/orchestrator-server/api/payment_fraud/initialGlobalModelWeight",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "9000",
+					"path": [
+						"orchestrator-server",
+						"api",
+						"payment_fraud",
+						"initialGlobalModelWeight"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "performances",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": []
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"followRedirects": true,
+				"disableUrlEncoding": false,
+				"disableCookies": false
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:9000/orchestrator-server/api/payment/performances",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "9000",
+					"path": [
+						"orchestrator-server",
+						"api",
+						"payment",
+						"performances"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "health-https",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": []
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"followRedirects": true,
+				"disableUrlEncoding": false,
+				"disableCookies": false
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "https://server-api.aikya.network/orchestrator-server/api/health",
+					"protocol": "https",
+					"host": [
+						"server-api",
+						"aikya",
+						"network"
+					],
+					"path": [
+						"orchestrator-server",
+						"api",
+						"health"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "domains",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": []
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"followRedirects": true,
+				"disableUrlEncoding": false,
+				"disableCookies": false
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9000/orchestrator-server/api/domains",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"orchestrator-server",
+						"api",
+						"domains"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "strategies",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": []
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"followRedirects": true,
+				"disableUrlEncoding": false,
+				"disableCookies": false
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9000/orchestrator-server/api/strategies",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"orchestrator-server",
+						"api",
+						"strategies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "signin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"xwu8151@gmail.com\",\r\n  \"password\": \"Admin123!\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9000/orchestrator-server/api/signin/network",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"orchestrator-server",
+						"api",
+						"signin",
+						"network"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "contract-call",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"fromAddress\": \"0x0c883601d158461aee8e37da9825a8b0117ca8bd\",\r\n    \"toAddress\": \"0x62a066DC2D29aa37F3Dee0C26a1Fb505bA106081\",\r\n    \"contractName\": \"SimpleStorage\",\r\n    \"contractFunction\": \"getStoredData\",\r\n    \"input\": []\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9000/orchestrator-server/api/contract/call",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"orchestrator-server",
+						"api",
+						"contract",
+						"call"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "contract-submit",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fromAddress\": \"0x0c883601D158461Aee8e37DA9825A8b0117Ca8Bd\",\r\n    \"toAddress\": \"0x00d63Ae81Dddc73571Bb11DEb0Ffb66C87928A6C\",\r\n    \"contractName\": \"FederatedLearnCommContract\",\r\n    \"contractFunction\": \"sendMessage\",\r\n    \"input\": [\r\n        \"1aed1575\",                         // id\r\n        1722745810383,                      // timestamp\r\n        \"OFL-C5\",                           // event_type\r\n        \"838f5bcc-MTAxXX-bfe7\",             // workflow_trace_id\r\n        \"payment\",                          // domain\r\n        \"Initial\",                          // status\r\n        false,                              // is_encrypted\r\n        \"{\\\"data\\\":[{\\\"clientId\\\":\\\"101\\\",\\\"parameters\\\":\\\"SDRzSUFORURyMllDLzNXYWVWU09VZmYzNzlJZ1NxR2tpVWlhMDB6ZDE5NmllVlRSWkdpZUtLa1VsZWd1R2lpRVNpbENob3dsQ2QzWDJUS0h6R1==\\\",\\\"metrics\\\":{\\\"accuracy\\\":0.9375,\\\"loss\\\":31.941851},\\\"numExamples\\\":16}]}\" // body as a JSON string\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9000/orchestrator-server/api/contract/submit",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"orchestrator-server",
+						"api",
+						"contract",
+						"submit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "currentRoundAggForm",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9000/orchestrator-server/api/currentRoundAggForm/69u37f5b-MTAxXX-322a",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"orchestrator-server",
+						"api",
+						"currentRoundAggForm",
+						"69u37f5b-MTAxXX-322a"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

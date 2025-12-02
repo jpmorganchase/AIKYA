@@ -1,0 +1,603 @@
+{
+	"info": {
+		"_postman_id": "7852c743-7ed8-41f9-9328-7f80215b7929",
+		"name": "Aikya",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6711410"
+	},
+	"item": [
+		{
+			"name": "FL-orchestrator-client",
+			"item": [
+				{
+					"name": "loadLocalData",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": []
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"followRedirects": true,
+						"disableUrlEncoding": false,
+						"disableCookies": false
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"fileName\": \"data_mix_bank1.csv\", \n\t\"domainType\": \"payment\",\n\t\"mockerEnabled\": false\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/orchestrator-cli/api/loadLocalData",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"orchestrator-cli",
+								"api",
+								"loadLocalData"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getInitialDataSeeds",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": []
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"followRedirects": true,
+						"disableUrlEncoding": false,
+						"disableCookies": false
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/orchestrator-cli/api/getInitialDataSeeds/payment",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"orchestrator-cli",
+								"api",
+								"getInitialDataSeeds",
+								"payment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "model",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": []
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"followRedirects": true,
+						"disableUrlEncoding": false,
+						"disableCookies": false
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/orchestrator-cli/api/model/payment",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"orchestrator-cli",
+								"api",
+								"model",
+								"payment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getDataItem",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": []
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"followRedirects": true,
+						"disableUrlEncoding": false,
+						"disableCookies": false
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/orchestrator-cli/api/payment/8501486208",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"orchestrator-cli",
+								"api",
+								"payment",
+								"8501486208"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getItemBatch",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": []
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"followRedirects": true,
+						"disableUrlEncoding": false,
+						"disableCookies": false
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/orchestrator-cli/api/payment/batch/8859ed9a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"orchestrator-cli",
+								"api",
+								"payment",
+								"batch",
+								"8859ed9a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "dashboard",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": []
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"followRedirects": true,
+						"disableUrlEncoding": false,
+						"disableCookies": false
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/orchestrator-cli/api/dashboard/payment",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"orchestrator-cli",
+								"api",
+								"dashboard",
+								"payment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "sendFeedback",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": []
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"followRedirects": true,
+						"disableUrlEncoding": false,
+						"disableCookies": false
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"feedbacks\": [\n    {\n      \"modelDataId\":1,\n      \"score\": \"8\",\n      \"isCorrect\": true\n    },\n\t\t {\n      \"modelDataId\":2,\n      \"score\": \"6\",\n      \"isCorrect\": true\n    },\n\t\t{\n      \"modelDataId\":3,\n      \"score\": \"2\",\n      \"isCorrect\": false\n    },\n\t\t{\n      \"modelDataId\":4,\n      \"score\": \"4\",\n      \"isCorrect\": false\n    }\n  ],\n\t\"batchId\": \"8859ed9a\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/orchestrator-cli/api/sendFeedback",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"orchestrator-cli",
+								"api",
+								"sendFeedback"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getPendingWorkflow",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": []
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"followRedirects": true,
+						"disableUrlEncoding": false,
+						"disableCookies": false
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/orchestrator-cli/api/getPendingWorkflow/payment",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"orchestrator-cli",
+								"api",
+								"getPendingWorkflow",
+								"payment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getLatestGlobalModel",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": []
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"followRedirects": true,
+						"disableUrlEncoding": false,
+						"disableCookies": false
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "idToken",
+								"value": "eyJraWQiOiIreVwvZWNYQ2xjSTFsM0JCaXFodmV3Z3FPRmxRenVDcU9OY1ZSQ3FwSzJETT0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJkN2NjNTQ4Yy02ZTMxLTQ4MDMtYTBmZC0wOWMwMzBiZDNmZGQiLCJjb2duaXRvOmdyb3VwcyI6WyJST0xFX0FETUlOIiwiUk9MRV9FVkFMVUFUT1IiXSwiZW1haWxfdmVyaWZpZWQiOnRydWUsImlzcyI6Imh0dHBzOlwvXC9jb2duaXRvLWlkcC51cy1lYXN0LTEuYW1hem9uYXdzLmNvbVwvdXMtZWFzdC0xX2p1ZXFUNmladSIsImNvZ25pdG86dXNlcm5hbWUiOiJkN2NjNTQ4Yy02ZTMxLTQ4MDMtYTBmZC0wOWMwMzBiZDNmZGQiLCJjdXN0b206Y29tcGFueSI6IkpQTSIsIm9yaWdpbl9qdGkiOiJiMDhjNjAxYi04Zjg0LTQyYzgtOTYwMC05NjJmYzM2YmZlZTYiLCJjb2duaXRvOnJvbGVzIjpbImFybjphd3M6aWFtOjo1NDM5NDA5ODM4NjI6cm9sZVwvUk9MRV9GTF9FVkFMVUFUT1IiLCJhcm46YXdzOmlhbTo6NTQzOTQwOTgzODYyOnJvbGVcL1JPTEVfRkxfQURNSU4iXSwiYXVkIjoiNmlmZGRqdWJvYjMyZmM0aWwwN2Yxcm9ldnYiLCJldmVudF9pZCI6IjFkZjQ4YjE1LTBiMzAtNDA3Yi05ODhjLTdiNDgyNmQ0NTQ2NyIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNzE3ODg0ODc0LCJuYW1lIjoiYnJpYW4iLCJleHAiOjE3MTc4ODg0NzQsImlhdCI6MTcxNzg4NDg3NCwianRpIjoiZjVmNzljYWUtMzVmNC00MDZjLWJiMjMtMGMxYzk4YzM1NjQ1IiwiZW1haWwiOiJ4d3U4MTUxQGdtYWlsLmNvbSJ9.iXrKvPZSbrTq1AOUIip-RC5awLH_CMDSlEAEm8fXE8DJ_c7OlIpLr2e8OILLYd2RccvA1rrz_-3GKwPiwWmW25DtimWqiH9MDefNBgrQx62D25SSq4vD7wfgPH6qRmW9-zDApwl07LJELkr9mHfvQFMdhy0d2FmbPi5N5ecyCC19ZBJ_7MeqAMgcltIx1qzzwiKULben74wJEpQkDORlFSSJExNK2s4ldh7dDQh2ftEX5PyBY0eG_rttSA1PjqKwQ7rZrzLZpSeG7Y0jKsjuiQ933ymf6WOLU3T5evagxp7Lexct8juUearBnugw61Pcx_U4AQGVHtCt_I4AhckVzQ"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/orchestrator-cli/api/getLatestGlobalModel/payment?version=371",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"orchestrator-cli",
+								"api",
+								"getLatestGlobalModel",
+								"payment"
+							],
+							"query": [
+								{
+									"key": "version",
+									"value": "371"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "FL-Seeds",
+			"item": [
+				{
+					"name": "loadLocalData",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": []
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"followRedirects": true,
+						"disableUrlEncoding": false,
+						"disableCookies": false
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"fileName\": \"data_mix_bank2.csv\",\n\t\"domainType\": \"payment\",\n\t\"mockerEnabled\": \"F\",\n\t\"workflowTraceId\": \"bc524038-MTAxXX-d5e91\",\n\t\"batchId\": \"4c0897b9\",\n\t\"model\": \"payment\"\n\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:7001/data-load/api/loadLocalData",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7001",
+							"path": [
+								"data-load",
+								"api",
+								"loadLocalData"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getInitialDataSeeds",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": []
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"followRedirects": true,
+						"disableUrlEncoding": false,
+						"disableCookies": false
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"domainType\": \"payment\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:7001/data-load/api/getInitialDataSeeds",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7001",
+							"path": [
+								"data-load",
+								"api",
+								"getInitialDataSeeds"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getLocalDataProcess",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": []
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"followRedirects": true,
+						"disableUrlEncoding": false,
+						"disableCookies": false
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"workflowTraceIds\": [\"6836c2e7-MTAxXX-c135\", \"0226ca89-MTAxXX-d042\"]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:7001/data-load/api/getLocalDataProcess",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7001",
+							"path": [
+								"data-load",
+								"api",
+								"getLocalDataProcess"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "health",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": []
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"followRedirects": true,
+						"disableUrlEncoding": false,
+						"disableCookies": false
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:7001/data-load/api/health",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7001",
+							"path": [
+								"data-load",
+								"api",
+								"health"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

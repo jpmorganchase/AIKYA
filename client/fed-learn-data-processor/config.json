@@ -1,0 +1,62 @@
+{
+    "app": {
+        "port": "7001",
+        "host": "0.0.0.0",
+        "file_watcher": {
+            "enabled": true,
+            "seeds_dir": "/apps/data/seeds",
+            "landing_dir": "/apps/data/landing",
+            "archive_dir": "/apps/data/archive"
+        },
+        "file": {
+            "node": 1,
+            "delimiter": "_aikya999_"
+        },
+        "data_source": {
+            "db_host": "localhost",
+            "db_port": "3306",
+            "database": "fedlearn_client",
+            "user": "",
+            "password": ""
+        },
+        "domains": {
+            "payment": {
+                "table": "domain_payment_data",
+                "csv_table_mapping": "conf/payment_csv_table_columns_mapping.csv"
+            },
+            "credit_card_fraud": {
+                "table": "domain_credit_card_fraud_data",
+                "csv_table_mapping": "conf/credit_card_fraud_csv_table_col_map.csv"
+            },
+            "payment_fraud": {
+                "table": "domain_payment_fraud_data",
+                "csv_table_mapping": "conf/payment_fraud_csv_table_columns_mapping.csv"
+            }
+        }
+    },
+    "logging": {
+        "log_dir": "/apps/logs",
+        "dict_config": {
+            "version": 1,
+            "formatters": {
+                "defaultFormatter": {
+                    "format": "[%(asctime)s] [%(levelname)s] [%(threadName)s] [%(filename)s:%(funcName)s:%(lineno)d] - %(message)s"
+                }
+            },
+            "loggers": {
+                "": {
+                    "level": "INFO",
+                    "handlers": ["console"]
+                }
+            },
+            "handlers": {
+                "console": {
+                    "class": "logging.StreamHandler",
+                    "level": "INFO",
+                    "formatter": "defaultFormatter",
+                    "stream": "ext://sys.stdout"
+                }
+            }
+        }
+    }
+}

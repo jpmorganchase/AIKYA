@@ -1,0 +1,302 @@
+[
+    {
+        "key": "amount",
+        "label": "Amount",
+        "value": 14726
+    },
+    {
+        "key": "avgGapTxnsRevDir1y",
+        "label": "Avg Gap Txns Rev Dir 1y",
+        "value": 36
+    },
+    {
+        "key": "avgGapTxnsSameDir1y",
+        "label": "Avg Gap Txns Same Dir 1y",
+        "value": 38
+    },
+    {
+        "key": "batchId",
+        "label": "Batch Id",
+        "value": "59652ded"
+    },
+    {
+        "key": "crdtrAccountIsSanction",
+        "label": "Crdtr Account Is Sanction",
+        "value": 1
+    },
+    {
+        "key": "crdtrAccountNum",
+        "label": "Crdtr Account Num",
+        "value": "GB13ARAZ20622431395839"
+    },
+    {
+        "key": "crdtrAddress",
+        "label": "Crdtr Address",
+        "value": "Flat 18\nPotts stravenue\nEast Declan\nS7 3FN"
+    },
+    {
+        "key": "crdtrAddress1",
+        "label": "Crdtr Address1",
+        "value": ""
+    },
+    {
+        "key": "crdtrAge",
+        "label": "Crdtr Age",
+        "value": 39
+    },
+    {
+        "key": "crdtrAmountIsFlagged",
+        "label": "Crdtr Amount Is Flagged",
+        "value": 1
+    },
+    {
+        "key": "crdtrBankIsSanction",
+        "label": "Crdtr Bank Is Sanction",
+        "value": 0
+    },
+    {
+        "key": "crdtrBicCode",
+        "label": "Crdtr Bic Code",
+        "value": "115291306"
+    },
+    {
+        "key": "crdtrCity",
+        "label": "Crdtr City",
+        "value": "South Kim"
+    },
+    {
+        "key": "crdtrCountry",
+        "label": "Crdtr Country",
+        "value": "XD"
+    },
+    {
+        "key": "crdtrCountryEncode",
+        "label": "Crdtr Country Encode",
+        "value": 10
+    },
+    {
+        "key": "crdtrCountryIsSanction",
+        "label": "Crdtr Country Is Sanction",
+        "value": 1
+    },
+    {
+        "key": "crdtrDiffThreshold",
+        "label": "Crdtr Diff Threshold",
+        "value": 12434.83
+    },
+    {
+        "key": "crdtrEmail",
+        "label": "Crdtr Email",
+        "value": "hcarter@outlook.com"
+    },
+    {
+        "key": "crdtrEmailReputation",
+        "label": "Crdtr Email Reputation",
+        "value": 0.48
+    },
+    {
+        "key": "crdtrFirstName",
+        "label": "Crdtr First Name",
+        "value": ""
+    },
+    {
+        "key": "crdtrHistTxnsFlagPer",
+        "label": "Crdtr Hist Txns Flag Per",
+        "value": 35
+    },
+    {
+        "key": "crdtrIsPhoneActive1m",
+        "label": "Crdtr Is Phone Active 1m",
+        "value": 0
+    },
+    {
+        "key": "crdtrLastName",
+        "label": "Crdtr Last Name",
+        "value": ""
+    },
+    {
+        "key": "crdtrName",
+        "label": "Crdtr Name",
+        "value": "David Davies"
+    },
+    {
+        "key": "crdtrPhone",
+        "label": "Crdtr Phone",
+        "value": "(028)9018874"
+    },
+    {
+        "key": "crdtrState",
+        "label": "Crdtr State",
+        "value": ""
+    },
+    {
+        "key": "crdtrStdDevThHist",
+        "label": "Crdtr Std Dev Th Hist",
+        "value": 539.28
+    },
+    {
+        "key": "crdtrZipcode",
+        "label": "Crdtr Zipcode",
+        "value": "HD87 6WQ"
+    },
+    {
+        "key": "createdDate",
+        "label": "Created Date",
+        "value": 1724179740000
+    },
+    {
+        "key": "currency",
+        "label": "Currency",
+        "value": "XDD"
+    },
+    {
+        "key": "dbtrAccountIsSanction",
+        "label": "Dbtr Account Is Sanction",
+        "value": 0
+    },
+    {
+        "key": "dbtrAccountNum",
+        "label": "Dbtr Account Num",
+        "value": "GB79JGIP63342338537002"
+    },
+    {
+        "key": "dbtrAddress",
+        "label": "Dbtr Address",
+        "value": "696 Karl rapids\nWest Maureenshire\nN6 5ZU"
+    },
+    {
+        "key": "dbtrAddress1",
+        "label": "Dbtr Address1",
+        "value": ""
+    },
+    {
+        "key": "dbtrAge",
+        "label": "Dbtr Age",
+        "value": 36
+    },
+    {
+        "key": "dbtrAmountIsFlagged",
+        "label": "Dbtr Amount Is Flagged",
+        "value": 0
+    },
+    {
+        "key": "dbtrBankIsSanction",
+        "label": "Dbtr Bank Is Sanction",
+        "value": 0
+    },
+    {
+        "key": "dbtrBicCode",
+        "label": "Dbtr Bic Code",
+        "value": "121436249"
+    },
+    {
+        "key": "dbtrCity",
+        "label": "Dbtr City",
+        "value": "North Anna"
+    },
+    {
+        "key": "dbtrCountry",
+        "label": "Dbtr Country",
+        "value": "GB"
+    },
+    {
+        "key": "dbtrCountryEncode",
+        "label": "Dbtr Country Encode",
+        "value": 2
+    },
+    {
+        "key": "dbtrCountryIsSanction",
+        "label": "Dbtr Country Is Sanction",
+        "value": 0
+    },
+    {
+        "key": "dbtrDiffThreshold",
+        "label": "Dbtr Diff Threshold",
+        "value": 12973.47
+    },
+    {
+        "key": "dbtrEmail",
+        "label": "Dbtr Email",
+        "value": "andrearobinson@yahoo.co.uk"
+    },
+    {
+        "key": "dbtrEmailReputation",
+        "label": "Dbtr Email Reputation",
+        "value": 0.5
+    },
+    {
+        "key": "dbtrFirstName",
+        "label": "Dbtr First Name",
+        "value": ""
+    },
+    {
+        "key": "dbtrHistTxnsFlagPer",
+        "label": "Dbtr Hist Txns Flag Per",
+        "value": 36
+    },
+    {
+        "key": "dbtrIsPhoneActive1m",
+        "label": "Dbtr Is Phone Active 1m",
+        "value": 1
+    },
+    {
+        "key": "dbtrLastName",
+        "label": "Dbtr Last Name",
+        "value": ""
+    },
+    {
+        "key": "dbtrName",
+        "label": "Dbtr Name",
+        "value": "Joshua Grant"
+    },
+    {
+        "key": "dbtrPhone",
+        "label": "Dbtr Phone",
+        "value": "+44(0)117 4960242"
+    },
+    {
+        "key": "dbtrState",
+        "label": "Dbtr State",
+        "value": ""
+    },
+    {
+        "key": "dbtrStdDevThHist",
+        "label": "Dbtr Std Dev Th Hist",
+        "value": 544.75
+    },
+    {
+        "key": "dbtrZipcode",
+        "label": "Dbtr Zipcode",
+        "value": "E9 1GD"
+    },
+    {
+        "key": "flag",
+        "label": "Flag",
+        "value": 1
+    },
+    {
+        "key": "id",
+        "label": "Id",
+        "value": 2003
+    },
+    {
+        "key": "isCcySanctioned",
+        "label": "Is Ccy Sanctioned",
+        "value": 0
+    },
+    {
+        "key": "numTxnsRevDir1y",
+        "label": "Num Txns Rev Dir 1y",
+        "value": 38
+    },
+    {
+        "key": "numTxnsSameDir1y",
+        "label": "Num Txns Same Dir 1y",
+        "value": 37
+    },
+    {
+        "key": "txnDateTs",
+        "label": "Txn Date Ts",
+        "value": 1623791288000
+    }
+]

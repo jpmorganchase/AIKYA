@@ -1,0 +1,14 @@
+[
+    {
+        "name": "payment_fraud",
+        "label": "Payment Anomalies"
+    },
+    {
+        "name": "payment",
+        "label": "Payment"
+    },
+    {
+        "name": "credit_card_fraud",
+        "label": "Credit Card Fraud"
+    }
+]

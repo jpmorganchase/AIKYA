@@ -1,0 +1,10 @@
+{
+    "id": 2,
+    "mode": "manual",
+    "name": "weight",
+    "domain": "payment",
+    "modes": [
+        "manual",
+        "auto"
+    ]
+}

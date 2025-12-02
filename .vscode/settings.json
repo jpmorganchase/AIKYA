@@ -1,0 +1,9 @@
+{
+    "cSpell.words": [
+        "jdbc",
+        "temurin"
+    ],
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    }
+}

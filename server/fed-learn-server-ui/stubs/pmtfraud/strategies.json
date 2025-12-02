@@ -1,0 +1,149 @@
+[
+    {
+        "description": "Description for Bulyan",
+        "func": "Bulyan",
+        "id": 22,
+        "name": "Bulyan",
+        "status": "inactive"
+    },
+    {
+        "description": "Description for Differential Privacy Server Side Adaptive Clipping",
+        "func": "DifferentialPrivacyServerSideAdaptiveClipping",
+        "id": 23,
+        "name": "Differential Privacy Server Side Adaptive Clipping",
+        "status": "inactive"
+    },
+    {
+        "description": "Description for Differential Privacy Server Side Fixed Clipping",
+        "func": "DifferentialPrivacyServerSideFixedClipping",
+        "id": 24,
+        "name": "Differential Privacy Server Side Fixed Clipping",
+        "status": "inactive"
+    },
+    {
+        "description": "Description for DP Fed Avg Adaptive",
+        "func": "DPFedAvgAdaptive",
+        "id": 25,
+        "name": "DP Fed Avg Adaptive",
+        "status": "inactive"
+    },
+    {
+        "description": "Description for DP Fed Avg Fixed",
+        "func": "DPFedAvgFixed",
+        "id": 26,
+        "name": "DP Fed Avg Fixed",
+        "status": "inactive"
+    },
+    {
+        "description": "Description for Fault Tolerant Fed Avg",
+        "func": "FaultTolerantFedAvg",
+        "id": 27,
+        "name": "Fault Tolerant Fed Avg",
+        "status": "inactive"
+    },
+    {
+        "description": "Description for Fed Adagrad",
+        "func": "FedAdagrad",
+        "id": 28,
+        "name": "Fed Adagrad",
+        "status": "inactive"
+    },
+    {
+        "description": "Description for Fed Adam",
+        "func": "FedAdam",
+        "id": 29,
+        "name": "Fed Adam",
+        "status": "inactive"
+    },
+    {
+        "description": "Description for Fed Avg Android",
+        "func": "FedAvgAndroid",
+        "id": 30,
+        "name": "Fed Avg Android",
+        "status": "inactive"
+    },
+    {
+        "description": "FedAvg is a widely used strategy in federated learning where the server aggregates model updates from clients by averaging them. This method was introduced by McMahan et al. in 2016.",
+        "func": "FedAvg",
+        "id": 31,
+        "name": "FedAvg",
+        "status": "active"
+    },
+    {
+        "description": "Description for Fed Avg M",
+        "func": "FedAvgM",
+        "id": 32,
+        "name": "Fed Avg M",
+        "status": "active"
+    },
+    {
+        "description": "Description for Fed Median",
+        "func": "FedMedian",
+        "id": 33,
+        "name": "Fed Median",
+        "status": "active"
+    },
+    {
+        "description": "Description for Fed Opt",
+        "func": "FedOpt",
+        "id": 34,
+        "name": "Fed Opt",
+        "status": "inactive"
+    },
+    {
+        "description": "Description for Fed Prox",
+        "func": "FedProx",
+        "id": 35,
+        "name": "Fed Prox",
+        "status": "inactive"
+    },
+    {
+        "description": "Description for Fed Trimmed Avg",
+        "func": "FedTrimmedAvg",
+        "id": 36,
+        "name": "Fed Trimmed Avg",
+        "status": "active"
+    },
+    {
+        "description": "Description for Fed Xgb Bagging",
+        "func": "FedXgbBagging",
+        "id": 37,
+        "name": "Fed Xgb Bagging",
+        "status": "inactive"
+    },
+    {
+        "description": "Description for Fed Xgb Cyclic",
+        "func": "FedXgbCyclic",
+        "id": 38,
+        "name": "Fed Xgb Cyclic",
+        "status": "inactive"
+    },
+    {
+        "description": "Description for Fed Xgb Nn Avg",
+        "func": "FedXgbNnAvg",
+        "id": 39,
+        "name": "Fed Xgb Nn Avg",
+        "status": "inactive"
+    },
+    {
+        "description": "Description for Fed Yogi",
+        "func": "FedYogi",
+        "id": 40,
+        "name": "Fed Yogi",
+        "status": "inactive"
+    },
+    {
+        "description": "Description for Krum",
+        "func": "Krum",
+        "id": 41,
+        "name": "Krum",
+        "status": "inactive"
+    },
+    {
+        "description": "Description for Q Fed Avg",
+        "func": "QFedAvg",
+        "id": 42,
+        "name": "Q Fed Avg",
+        "status": "inactive"
+    }
+]

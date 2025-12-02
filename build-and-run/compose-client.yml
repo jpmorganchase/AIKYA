@@ -1,0 +1,208 @@
+name: ${CLIENT_COMPOSE_NAME}
+
+services:
+  client-db:
+    image: ${CLIENT_COMPONENT_IMAGE_TAG_PREFIX}/bank${CLIENT_NODE_NUMBER}-db:${CLIENT_DB_IMAGE_VERSION:-latest}
+    build:
+      context: ${CLIENT_DB_BUILD_CONTEXT}
+      dockerfile: Dockerfile
+      args:
+        NODE_DIR: node${CLIENT_NODE_NUMBER}
+    environment:
+      MYSQL_USER: ${CLIENT_DB_USERNAME}
+      MYSQL_PASSWORD: ${CLIENT_DB_PWD}
+      MYSQL_ROOT_PASSWORD: ${CLIENT_DB_ROOT_PWD}
+    restart: on-failure
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "mysqladmin",
+          "ping",
+          "-h",
+          "localhost",
+          "-P",
+          "${CLIENT_DB_PORT:-3306}",
+        ]
+      retries: 5
+      interval: 5s
+      timeout: 10s
+      start_period: 30s
+    ports:
+      - "${CLIENT_DB_PORT_MAP_TO_HOST_PORT}:3306"
+    volumes:
+      - client-db-data:/var/lib/mysql
+    networks:
+      - client-network
+
+  client-data-processor:
+    image: ${CLIENT_COMPONENT_IMAGE_TAG_PREFIX}/bank${CLIENT_NODE_NUMBER}-data-processor:${CLIENT_DATA_PROCESSOR_IMAGE_VERSION}
+    build:
+      context: ${CLIENT_DATA_PROCESSOR_BUILD_CONTEXT}
+      dockerfile: Dockerfile
+      additional_contexts:
+        datasets: ${CLIENT_DATASET_ROOT}
+      args:
+        CLIENT_NODE_NUMBER: ${CLIENT_NODE_NUMBER}
+    restart: unless-stopped
+    depends_on:
+      client-db:
+        condition: service_healthy
+    ports:
+      - "${CLIENT_DATA_PROCESSOR_PORT_MAP_TO_HOST_PORT}:7001"
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "python3",
+          "-c",
+          "import urllib.request; urllib.request.urlopen('http://localhost:7001/data-load/api/health').read()",
+        ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    entrypoint:
+      [
+        "/bin/sh",
+        "-c",
+        "/apps/merge-seeds.sh && exec python3 main.py -f config.json --db-host client-db --db-user ${CLIENT_DB_USERNAME} --db-password ${CLIENT_DB_PWD}",
+      ]
+    networks:
+      - client-network
+
+  client-agent:
+    image: ${CLIENT_COMPONENT_IMAGE_TAG_PREFIX}/bank${CLIENT_NODE_NUMBER}-agent:${CLIENT_AGENT_IMAGE_VERSION}
+    build:
+      context: ${CLIENT_AGENT_BUILD_CONTEXT}
+      dockerfile: Dockerfile
+      additional_contexts:
+        datasets: ${CLIENT_DATASET_ROOT}
+      args:
+        CLIENT_NODE_NUMBER: ${CLIENT_NODE_NUMBER}
+    restart: unless-stopped
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "python3",
+          "-c",
+          "import urllib.request; urllib.request.urlopen('http://localhost:7000/agent/api/health').read()",
+        ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    depends_on:
+      client-db:
+        condition: service_healthy
+    environment:
+      app.datasource.host: ${CLIENT_DB_HOSTNAME:-client-db}
+      app.datasource.port: ${CLIENT_DB_PORT:-3306}
+      app.datasource.database: "fedlearn_client"
+      app.datasource.user: ${CLIENT_DB_USERNAME}
+      app.datasource.password: ${CLIENT_DB_PWD}
+      app.genesis.dataset.payment_fraud: "/apps/data/genesis/payment_fraud/node${CLIENT_NODE_NUMBER}"
+      app.scaling.dataset.payment_fraud: "/apps/data/scaling/payment_fraud/node${CLIENT_NODE_NUMBER}"
+    ports:
+      - "${CLIENT_AGENT_PORT_MAP_TO_HOST_PORT}:7000"
+    command: ["python3", "main.py"]
+    networks:
+      - client-network
+
+  client-orchestrator:
+    image: ${CLIENT_COMPONENT_IMAGE_TAG_PREFIX}/bank${CLIENT_NODE_NUMBER}-orchestrator:${CLIENT_ORCHESTRATOR_IMAGE_VERSION}
+    build:
+      context: ${CLIENT_ORCHESTRATOR_BUILD_CONTEXT}
+      dockerfile: ./fed-learn-orchestrator-client/Dockerfile
+      additional_contexts:
+        aikya_commons: ${COMMONS_BUILD_CONTEXT}
+    restart: unless-stopped
+    depends_on:
+      client-data-processor:
+        condition: service_started
+      client-agent:
+        condition: service_started
+      client-db:
+        condition: service_healthy
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "curl",
+          "http://localhost:8080/orchestrator-cli/api/actuator/health",
+        ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+    ports:
+      - "${CLIENT_ORCHESTRATOR_PORT_MAP_TO_HOST_PORT}:8080"
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+      SPRING_APPLICATION_NAME: orchestrator
+      SPRING_DATASOURCE_AGENT_JDBC_URL: jdbc:mysql://${CLIENT_DB_HOSTNAME:-client-db}:3306/fedlearn_orchestrator_agent
+      SPRING_DATASOURCE_AGENT_USERNAME: ${CLIENT_DB_USERNAME}
+      SPRING_DATASOURCE_AGENT_PASSWORD: ${CLIENT_DB_PWD}
+      SPRING_DATASOURCE_AGENT_DRIVER_CLASS_NAME: com.mysql.cj.jdbc.Driver
+      SPRING_DATASOURCE_CLIENT_JDBC_URL: jdbc:mysql://${CLIENT_DB_HOSTNAME:-client-db}:3306/fedlearn_client
+      SPRING_DATASOURCE_CLIENT_USERNAME: ${CLIENT_DB_USERNAME}
+      SPRING_DATASOURCE_CLIENT_PASSWORD: ${CLIENT_DB_PWD}
+      SPRING_DATASOURCE_CLIENT_DRIVER_CLASS_NAME: com.mysql.cj.jdbc.Driver
+      SPRING_DATASOURCE_CHAINEVENT_JDBC_URL: jdbc:mysql://${CLIENT_DB_HOSTNAME:-client-db}:3306/chain_event
+      SPRING_DATASOURCE_CHAINEVENT_USERNAME: ${CLIENT_DB_USERNAME}
+      SPRING_DATASOURCE_CHAINEVENT_PASSWORD: ${CLIENT_DB_PWD}
+      SPRING_DATASOURCE_CHAINEVENT_DRIVER_CLASS_NAME: com.mysql.cj.jdbc.Driver
+
+      APP_PROTOCOL: http
+      APP_NODE_NAME: ${CLIENT_ORCHESTRATOR_NODE_NAME}
+      APP_NODE_NUMBER: ${CLIENT_APP_NODE_NUMBER}
+      APP_NODE_MAIL: ${CLIENT_ORCHESTRATOR_NODE_NAME}@server.aikya.com
+      URL_SERVER_BASEURL: ${SERVER_ORCHESTRATOR_PROTOCOL}://${SERVER_ORCHESTRATOR_HOST}:${SERVER_ORCHESTRATOR_PORT}/orchestrator-server/api
+      URL_EVENT_REGISTER_SERVER_URL: ${CHAIN_EVENT_PUB_PROTOCOL}://${CHAIN_EVENT_PUB_HOST}:${CHAIN_EVENT_PUB_PORT}/chain-event/api
+      URL_DATA_BASEURL: ${CLIENT_DATA_PROCESSOR_API_PROTOCOL}://${CLIENT_DATA_PROCESSOR_API_HOST}:${CLIENT_DATA_PROCESSOR_API_PORT}/data-load/api
+      URL_AGENT_BASEURL: ${CLIENT_AGENT_API_PROTOCOL}://${CLIENT_AGENT_API_HOST}:${CLIENT_AGENT_API_PORT}/agent/api
+      URL_CONTRACT_API_SERVER_URL: ${CONTRACT_API_PROTOCOL}://${CONTRACT_API_HOST}:${CONTRACT_API_PORT}/contracts
+      # Domains configuration
+      APP_DOMAINS: "credit_card_fraud,payment_fraud"
+    networks:
+      - client-network
+      - aikya-fl-server-net
+
+  client-ui:
+    image: ${CLIENT_COMPONENT_IMAGE_TAG_PREFIX}/bank${CLIENT_NODE_NUMBER}-ui:${CLIENT_UI_IMAGE_VERSION}
+    build:
+      context: ${CLIENT_UI_BUILD_CONTEXT}
+      dockerfile: Dockerfile
+      args:
+        REACT_APP_ENV: ${REACT_APP_ENV}
+        REACT_APP_BANK: ${REACT_APP_BANK}
+        GENERATE_SOURCEMAP: true
+        DISABLE_ESLINT_PLUGIN: false
+    environment:
+      REACT_APP_ENV: ${REACT_APP_ENV}
+      REACT_APP_BANK: ${REACT_APP_BANK}
+      GENERATE_SOURCEMAP: true
+      DISABLE_ESLINT_PLUGIN: false
+      BANK_URL_PROTOCOL: ${BANK_URL_PROTOCOL}
+      BANK_ORCHESTRATOR_URL: ${BANK_ORCHESTRATOR_URL}
+    ports:
+      - "${CLIENT_UI_PORT_MAP_TO_HOST_PORT}:80"
+    depends_on:
+      client-orchestrator:
+        condition: service_healthy
+    networks:
+      - client-network
+
+networks:
+  client-network:
+    driver: bridge
+    attachable: true
+    driver_opts:
+      com.docker.network.bridge.host_binding_ipv4: "0.0.0.0"
+  aikya-fl-server-net:
+    external: true
+
+volumes:
+  client-db-data:
+    name: ${CLIENT_DB_VOLUME_NAME}

@@ -1,0 +1,65 @@
+{
+    "actionNode": "JPM",
+    "actionNodeStep": "1",
+    "latestTrainingDate": "2024-02-14T17:12:12.000+00:00",
+    "nodes": [
+        {
+            "id": 101,
+            "name": "JPM",
+            "result": [
+                {
+                    "batchId": "d5835f3d",
+                    "currentGroup": 1,
+                    "currentStep": 1,
+                    "dataLoadDate": "2024-02-14T17:12:00.000+00:00",
+                    "isOnTransition": false,
+                    "newBatchId": "",
+                    "newWorkflowId": 0,
+                    "originBatchId": "",
+                    "originWorkflowId": 0,
+                    "steps": [
+                        {
+                            "id": 1,
+                            "label": "Data Load",
+                            "source": "DATA-ETL",
+                            "step": 1,
+                            "stepDesc": "Initiate Data load",
+                            "stepStatus": "Pending",
+                            "target": "DAPP-BACKEND"
+                        }
+                    ],
+                    "trainingDate": "2024-02-14T17:12:00.000+00:00",
+                    "version": "v-527",
+                    "workflowId": 1,
+                    "workflowStatus": "Pending"
+                }
+            ],
+            "tag": "",
+            "version": 527
+        },
+        {
+            "id": 102,
+            "name": "CITI",
+            "result": [],
+            "tag": "",
+            "version": 0
+        },
+        {
+            "id": 103,
+            "name": "DBS",
+            "result": [],
+            "tag": "",
+            "version": 0
+        },
+        {
+            "id": 100,
+            "name": "AGGREGATE",
+            "result": [],
+            "tag": "",
+            "version": 0
+        }
+    ],
+    "tag": "s0.png",
+    "version": 527,
+    "versionDisplay": "v-527"
+}
