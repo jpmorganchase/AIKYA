@@ -5,5 +5,5 @@ Copyright 2025 Kinexys by JPMorgan
 This product includes software developed at Kinexys by JPMorgan (https://www.jpmorgan.com/kinexys/index/).
 
 The developer of aggregation strategies as part of the aggregation server, which are borrowed from, derived from, or
-inspired by Flower Framework (https://github.com/adap/flower).
+inspired by Flower Framework (https://github.com/adap/flower), licensed under the Apache License 2.0.
 Copyright 2025 Flower AI (https://flower.ai/). All Rights Reserved.
