@@ -1,0 +1,12 @@
+Pipfile.lock
+__pycache__
+.pytest_cache
+.coverage
+logs
+.idea
+.idea/
+*.log
+*.iml
+*.pem
+logs/
+venv/

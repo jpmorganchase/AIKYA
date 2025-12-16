@@ -1,0 +1,17 @@
+use fedlearn_client;
+insert into model_client_records (
+        name,
+        definition,
+        model_version,
+        domain,
+        local_model_weights,
+        local_weights_version
+    )
+values (
+        'payment_fraud',
+        '',
+        0,
+        'payment_fraud',
+        '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',
+        0
+    )

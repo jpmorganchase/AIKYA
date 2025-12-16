@@ -1,0 +1,84 @@
+{
+    "result": [
+        {
+            "batchId": "4d723023",
+            "currentGroup": 0,
+            "currentStep": 7,
+            "dataLoadDate": "2024-01-30T21:09:15.000+00:00",
+            "newBatchId": "ed69d071",
+            "newWorkflowId": 2,
+            "originBatchId": "4d723023",
+            "originWorkflowId": 1,
+            "steps": [
+                {
+                    "id": 7,
+                    "label": "Data Load",
+                    "source": "DATA-ETL",
+                    "step": 1,
+                    "stepDesc": "Initiate Data load",
+                    "stepStatus": "Complete",
+                    "target": "DAPP-BACKEND"
+                },
+                {
+                    "id": 8,
+                    "label": "Train Local Model",
+                    "source": "DAPP-BACKEND",
+                    "step": 2,
+                    "stepDesc": "Request for Prediction",
+                    "stepStatus": "Complete",
+                    "target": "FL-CLIENT"
+                },
+                {
+                    "id": 9,
+                    "label": "Sent feedback",
+                    "source": "FL-CLIENT",
+                    "step": 3,
+                    "stepDesc": "Send Prediction Result",
+                    "stepStatus": "Complete",
+                    "target": "DAPP-BACKEND"
+                },
+                {
+                    "id": 10,
+                    "label": "Retrain",
+                    "source": "FL-SERVER",
+                    "step": 4,
+                    "stepDesc": "Initiate Aggregate Trigger",
+                    "stepStatus": "pending",
+                    "target": "FL-CLIENT"
+                },
+                {
+                    "id": 11,
+                    "label": "Share Local Model",
+                    "source": "FL-CLIENT",
+                    "step": 5,
+                    "stepDesc": "Sends Encrypted Local Model",
+                    "stepStatus": "Initial",
+                    "target": "FL-SERVER"
+                },
+                {
+                    "id": 12,
+                    "label": "Aggregate Model",
+                    "source": "FL-SERVER",
+                    "step": 6,
+                    "stepDesc": "Send Global Aggregated Model",
+                    "stepStatus": "Initial",
+                    "target": "FL-CLIENT"
+                },
+                {
+                    "id": 12,
+                    "label": "Received Global Model",
+                    "source": "FL-CLIENT",
+                    "step": 7,
+                    "stepDesc": "Update Global Aggregated Model",
+                    "stepStatus": "Initial",
+                    "target": "DAPP-BACKEND"
+                }
+            ],
+            "trainingDate": "2024-01-31T02:44:09.000+00:00",
+            "version": "v-440",
+            "workflowId": 1,
+            "workflowStatus": "Complete"
+        }
+    ],
+    "version": "v-442"
+}

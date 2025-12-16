@@ -1,0 +1,47 @@
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+server:
+  port: ${SERVER_PORT:9000}
+  servlet:
+    contextPath: ${SERVER_CONTEXT_PATH:/orchestrator-server/api}
+app:
+  protocol: ${APP_PROTOCOL:http}
+  url:
+    signin: https://api.fedlearn.network/{node}/api/signin
+    signup: https://api.fedlearn.network/{node}/api/signup
+    fedagg: ${URL_FL_SERVER_URL:http://localhost:9001/aggregate/api/run-aggregate}
+  node:
+    name: ${APP_NODE_NAME:network}
+    number: ${APP_NODE_NUMBER:999}
+  run-mode-type: Multi-2
+  expired-client-request-minutes: 5
+  schedule:
+    client-aggregation-init:
+      interval: ${SCHEDULE_CLIENT_AGG_INIT_INTERVAL:8000}
+    client-aggregation-complete:
+      interval: ${SCHEDULE_CLIENT_AGG_COMPLETE_INTERVAL:8000}
+spring:
+  application:
+    name: ${SPRING_APPLICATION_NAME:orchestrator}
+  datasource:
+    aggregate:
+      jdbc-url: ${SPRING_DATASOURCE_AGGREGATE_JDBC_URL:jdbc:mysql://localhost:3306/fedlearn_orchestrator_aggregator}
+      username: ${SPRING_DATASOURCE_AGGREGATE_USERNAME:#{''}}
+      password: ${SPRING_DATASOURCE_AGGREGATE_PASSWORD:#{''}}
+      driver-class-name: ${SPRING_DATASOURCE_AGGREGATE_DRIVER_CLASS_NAME:com.mysql.cj.jdbc.Driver}
+  jpa:
+    show-sql: false
+    properties:
+      hibernate:
+        id:
+          new_generator_mappings: false
+        show_sql: false
+        format_sql: false
+    hibernate:
+      ddl-auto: none
+
+clients:
+  list: ${CLIENTS_LIST:"BANK1,101,bank1@server.aikya.com;BANK2,102,bank2@server.aikya.com;BANK3,103,bank3@server.aikya.com"}

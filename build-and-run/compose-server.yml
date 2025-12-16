@@ -1,0 +1,191 @@
+name: aikya-fl-server
+
+services:
+  server-db:
+    # container_name: fl-server-db
+    image: "${SERVER_COMPONENT_IMAGE_TAG_PREFIX}/db:${SERVER_DB_IMAGE_VERSION:-latest}"
+    build:
+      context: ${SERVER_DB_BUILD_CONTEXT}
+      dockerfile: Dockerfile
+    environment:
+      MYSQL_USER: ${SERVER_DB_USERNAME:-aikya_fl_server}
+      MYSQL_PASSWORD: ${SERVER_DB_PWD:-aikya_fl_pwd}
+      MYSQL_ROOT_PASSWORD: ${SERVER_DB_ROOT_PWD:-aikya_fl_root_pwd}
+    restart: on-failure
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "mysqladmin",
+          "ping",
+          "-h",
+          "localhost",
+          "-P",
+          "${SERVER_DB_PORT:-3306}",
+        ]
+      retries: 5
+      interval: 5s
+      timeout: 10s
+      start_period: 30s
+    ports:
+      - "${SERVER_DB_PORT_MAP_TO_HOST_PORT}:3306"
+    volumes:
+      - server-db-data:/var/lib/mysql
+    networks:
+      - aikya-fl-server-net
+
+  server-fl-aggregator:
+    # container_name: fl-server-aggregator
+    image: ${SERVER_COMPONENT_IMAGE_TAG_PREFIX}/aggregator:${SERVER_AGGREGATOR_IMAGE_VERSION:-latest}
+    build:
+      context: ${SERVER_AGGREGATOR_BUILD_CONTEXT}
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    depends_on:
+      server-db:
+        condition: service_healthy
+    environment:
+      app.datasource.host: ${SERVER_DB_HOSTNAME:-server-db}
+      app.datasource.port: ${SERVER_DB_PORT:-3306}
+      app.datasource.database: "fedlearn_orchestrator_aggregator"
+      app.datasource.user: ${SERVER_DB_USERNAME:-aikya_fl_server}
+      app.datasource.password: ${SERVER_DB_PWD:-aikya_fl_pwd}
+    ports:
+      - "${SERVER_AGGREGATOR_PORT_MAP_TO_HOST_PORT:-9001}:9001"
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "python3",
+          "-c",
+          "import urllib.request; urllib.request.urlopen('http://localhost:9001/aggregate/api/health').read()",
+        ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    networks:
+      - aikya-fl-server-net
+
+  server-orchestrator:
+    # container_name: fl-server-orchestrator
+    restart: unless-stopped
+    image: ${SERVER_COMPONENT_IMAGE_TAG_PREFIX}/orchestrator:${SERVER_ORCHESTRATOR_IMAGE_VERSION:-latest}
+    build:
+      context: ${SERVER_ORCHESTRATOR_BUILD_CONTEXT}
+      dockerfile: ./fed-learn-orchestrator-server/Dockerfile
+      additional_contexts:
+        aikya-commons: ${COMMONS_BUILD_CONTEXT}
+    depends_on:
+      server-fl-aggregator:
+        condition: service_healthy
+      server-db:
+        condition: service_healthy
+    ports:
+      - "${SERVER_ORCHESTRATOR_PORT_MAP_TO_HOST_PORT:-9000}:9000"
+    environment:
+      # General Spring Application properties
+      SPRING_PROFILES_ACTIVE: docker
+      SPRING_APPLICATION_NAME: orchestrator
+      SPRING_DATASOURCE_AGGREGATE_JDBC_URL: jdbc:mysql://${SERVER_DB_HOSTNAME:-server-db}:${SERVER_DB_PORT:-3306}/fedlearn_orchestrator_aggregator
+      SPRING_DATASOURCE_AGGREGATE_USERNAME: ${SERVER_DB_USERNAME}
+      SPRING_DATASOURCE_AGGREGATE_PASSWORD: ${SERVER_DB_PWD}
+      SPRING_DATASOURCE_AGGREGATE_DRIVER_CLASS_NAME: com.mysql.cj.jdbc.Driver
+
+      SPRING_DATASOURCE_CHAINEVENT_JDBC_URL: jdbc:mysql://${SERVER_DB_HOSTNAME:-server-db}:${SERVER_DB_PORT:-3306}/chain_event
+      SPRING_DATASOURCE_CHAINEVENT_USERNAME: ${SERVER_DB_USERNAME}
+      SPRING_DATASOURCE_CHAINEVENT_PASSWORD: ${SERVER_DB_PWD}
+      SPRING_DATASOURCE_CHAINEVENT_DRIVER_CLASS_NAME: com.mysql.cj.jdbc.Driver
+
+      # Blockchain configuration properties
+      APP_PROTOCOL: http
+      APP_URL_SIGNIN: https://api.fedlearn.network/{node}/api/signin
+      APP_URL_SIGNUP: https://api.fedlearn.network/{node}/api/signup
+      URL_FL_SERVER_URL: http://${SERVER_FL_AGGREGATOR_HOSTNAME:-server-fl-aggregator}:9001/aggregate/api/run-aggregate
+      URL_EVENT_REGISTER_SERVER_URL: ${URL_EVENT_REGISTER_SERVER:-http://chain-event-service:8000}/chain-event/api/event/register
+      APP_NODE_NAME: network
+      APP_NODE_NUMBER: 999
+      APP_RUN_MODE_TYPE: Multi-2
+      APP_EXPIRED_CLIENT_REQUEST_MINUTES: 5
+      APP_AGGREGATE_VENDOR: flwr
+      APP_AGGREGATE_STRATEGY: FedAvg
+      APP_AGGREGATE_TOTAL_ROUND: 100
+
+      # Scheduling properties
+      APP_SCHEDULE_CLIENT_AGGREGATION_INIT_INTERVAL: 8000
+      APP_SCHEDULE_CLIENT_AGGREGATION_COMPLETE_INTERVAL: 15000
+
+      # Clients List
+      CLIENTS_LIST: "BANK1,101,bank1@server.aikya.com;BANK2,102,bank2@server.aikya.com;BANK3,103,bank3@server.aikya.com"
+
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "curl",
+          "http://localhost:9000/orchestrator-server/api/actuator/health",
+        ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+    networks:
+      - aikya-fl-server-net
+
+  server-ui:
+    # container_name: fl-server-ui
+    image: ${SERVER_COMPONENT_IMAGE_TAG_PREFIX}/ui:${SERVER_UI_IMAGE_VERSION:-latest}
+    build:
+      context: ${SERVER_UI_BUILD_CONTEXT}
+      dockerfile: Dockerfile
+      args:
+        REACT_APP_ENV: ${REACT_APP_ENV}
+        REACT_APP_BANK: ${REACT_APP_BANK:-network}
+        GENERATE_SOURCEMAP: false
+        DISABLE_ESLINT_PLUGIN: true
+    environment:
+      REACT_APP_ENV: ${REACT_APP_ENV}
+      REACT_APP_BANK: ${REACT_APP_BANK:-network}
+      SERVER_AGGREGATOR_PROTOCOL: ${SERVER_AGGREGATOR_PROTOCOL}
+      SERVER_FL_AGGREGATOR_URL: ${SERVER_FL_AGGREGATOR_URL}
+      SERVER_ORCHESTRATOR_PROTOCOL: ${SERVER_ORCHESTRATOR_PROTOCOL}
+      SERVER_FL_ORCHESTRATOR_URL: ${SERVER_FL_ORCHESTRATOR_URL}
+    ports:
+      - "${SERVER_UI_PORT_MAP_TO_HOST_PORT:-4000}:80"
+    depends_on:
+      server-orchestrator:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-w='\n'", "http://localhost:80/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+    networks:
+      - aikya-fl-server-net
+    deploy:
+      resources:
+        limits:
+          memory: ${SERVER_UI_MEMORY_LIMIT:-512M}
+          cpus: ${SERVER_UI_CPU_LIMIT:-1.0}
+        reservations:
+          memory: ${SERVER_UI_MEMORY_RESERVATION:-256M}
+          cpus: ${SERVER_UI_CPU_RESERVATION:-0.25}
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+networks:
+  aikya-fl-server-net:
+    name: aikya-fl-server-net
+    driver: bridge
+    attachable: true
+    driver_opts:
+      com.docker.network.bridge.host_binding_ipv4: "0.0.0.0"
+
+volumes:
+  server-db-data:
+    driver: local
+  contract-deployments:

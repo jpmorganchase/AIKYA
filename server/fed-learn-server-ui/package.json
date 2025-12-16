@@ -1,0 +1,57 @@
+{
+    "name": "pmt-fraud-ui",
+    "author": "",
+    "licence": "MIT",
+    "version": "1.0.0",
+    "private": false,
+    "engines": {
+        "node": ">=18.0.0 <=22.x",
+        "npm": ">=9.0.0"
+    },
+    "scripts": {
+        "start": "GENERATE_SOURCEMAP=false REACT_APP_BANK=network react-scripts start",
+        "build": "GENERATE_SOURCEMAP=false DISABLE_ESLINT_PLUGIN=true react-scripts build",
+        "build:production": "GENERATE_SOURCEMAP=false DISABLE_ESLINT_PLUGIN=true REACT_APP_ENV=prod react-scripts build",
+        "build:docker": "GENERATE_SOURCEMAP=true DISABLE_ESLINT_PLUGIN=true REACT_APP_ENV=docker react-scripts build",
+        "build:docker-demo": "GENERATE_SOURCEMAP=false DISABLE_ESLINT_PLUGIN=true REACT_APP_ENV=docker-demo react-scripts build",
+        "build:docker-dist": "GENERATE_SOURCEMAP=false DISABLE_ESLINT_PLUGIN=true REACT_APP_ENV=docker-dist react-scripts build",
+        "build:analyze": "npm run build && npx source-map-explorer 'build/static/js/*.js'",
+        "test": "react-scripts test",
+        "eject": "react-scripts eject",
+        "clean": "rm -rf build node_modules/.cache"
+    },
+    "eslintConfig": {
+        "extends": "react-app"
+    },
+    "browserslist": [
+        ">0.2%",
+        "not dead",
+        "not op_mini all"
+    ],
+    "dependencies": {
+        "@emotion/react": "^11.14.0",
+        "@emotion/styled": "^11.14.1",
+        "@mui/icons-material": "^6.1.9",
+        "@mui/material": "^6.1.9",
+        "@mui/styles": "^6.1.9",
+        "@mui/system": "^7.3.3",
+        "@mui/x-charts": "^7.22.2",
+        "axios": "^1.7.9",
+        "lodash": "^4.17.21",
+        "prop-types": "^15.8.1",
+        "react": "^18.3.1",
+        "react-dom": "^18.3.1",
+        "react-helmet": "^6.1.0",
+        "react-perfect-scrollbar": "^1.5.8",
+        "react-player": "^2.16.1",
+        "react-router-dom": "^6.30.1",
+        "react-scripts": "^5.0.1",
+        "react-toastify": "^10.0.6"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.26.0",
+        "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+        "babel-loader": "^9.2.1",
+        "eslint-config-airbnb": "^19.0.4"
+    }
+}

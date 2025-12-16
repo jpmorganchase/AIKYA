@@ -1,0 +1,10 @@
+{
+    "id": 1,
+    "mode": "auto",
+    "name": "workflow",
+    "domain": "payment",
+    "modes": [
+        "manual",
+        "auto"
+    ]
+}

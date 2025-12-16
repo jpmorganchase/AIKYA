@@ -1,0 +1,299 @@
+{
+    "headers": [
+        {
+            "headerName": "Batch Number",
+            "field": "name",
+            "lockPinned": false,
+            "editable": false,
+            "hide": false,
+            "flex": 1
+        },
+        {
+            "headerName": "Model Version",
+            "field": "modelVersion",
+            "filter": "agMultiColumnFilter",
+            "lockPinned": false,
+            "editable": false,
+            "hide": false
+        },
+        {
+            "headerName": "Total",
+            "field": "totalRecordCount",
+            "type": "numericColumn",
+            "lockPinned": false,
+            "editable": false,
+            "hide": false
+        },
+        {
+            "headerName": "Predicted",
+            "lockPinned": false,
+            "editable": false,
+            "hide": false,
+            "headerClass": "customHeaderCss",
+            "children": [
+                {
+                    "headerName": "Anomalous",
+                    "field": "anomalousRecordCount",
+                    "type": "numericColumn",
+                    "filter": "agMultiColumnFilter",
+                    "editable": false,
+                    "lockPinned": false,
+                    "pinned": null,
+                    "cellClass": null,
+                    "headerTooltip": null,
+                    "hide": false
+                },
+                {
+                    "headerName": "%Anomalous",
+                    "field": "anomalousPercentage",
+                    "type": "numericColumn",
+                    "filter": "agMultiColumnFilter",
+                    "editable": false,
+                    "lockPinned": false,
+                    "pinned": null,
+                    "cellClass": null,
+                    "headerTooltip": null,
+                    "hide": false
+                }
+            ]
+        },
+        {
+            "headerName": "Actual",
+            "lockPinned": false,
+            "editable": false,
+            "hide": false,
+            "headerClass": "customHeaderCss",
+            "children": [
+                {
+                    "headerName": "Anomalous",
+                    "field": "actualAnomalousRecordCount",
+                    "type": "numericColumn",
+                    "filter": "agMultiColumnFilter",
+                    "editable": false,
+                    "lockPinned": false,
+                    "pinned": null,
+                    "cellClass": null,
+                    "headerTooltip": null,
+                    "hide": false
+                },
+                {
+                    "headerName": "%Anomalous",
+                    "field": "actualAnomalousPercentage",
+                    "type": "numericColumn",
+                    "filter": "agMultiColumnFilter",
+                    "editable": false,
+                    "lockPinned": false,
+                    "pinned": null,
+                    "cellClass": null,
+                    "headerTooltip": null,
+                    "hide": false
+                }
+            ]
+        },
+        {
+            "headerName": "Created Date",
+            "field": "createdDate",
+            "filter": "agMultiColumnFilter",
+            "lockPinned": false,
+            "editable": false,
+            "hide": false
+        },
+        {
+            "headerName": "Action",
+            "field": "action",
+            "filter": "agSetColumnFilter",
+            "lockPinned": false,
+            "editable": false,
+            "hide": true
+        }
+    ],
+    "data": [
+        {
+            "name": "Batch 1 (Type 1 Anomalies)",
+            "modelVersion": "v-0",
+            "totalRecordCount": 2500,
+            "anomalousRecordCount": 754,
+            "anomalousPercentage": "30.16%",
+            "actualAnomalousRecordCount": 680,
+            "actualAnomalousPercentage": "27.20%",
+            "createdDate": 1728477419000,
+            "action": "c1e10966"
+        },
+        {
+            "name": "Batch 2 (Type 1 Anomalies)",
+            "modelVersion": "v-1",
+            "totalRecordCount": 2500,
+            "anomalousRecordCount": 37,
+            "anomalousPercentage": "1.48%",
+            "actualAnomalousRecordCount": 680,
+            "actualAnomalousPercentage": "27.20%",
+            "createdDate": 1728477541000,
+            "action": "21635fde"
+        },
+        {
+            "name": "Batch 3 (Type 1 Anomalies)",
+            "modelVersion": "v-1",
+            "totalRecordCount": 2500,
+            "anomalousRecordCount": 37,
+            "anomalousPercentage": "1.48%",
+            "actualAnomalousRecordCount": 680,
+            "actualAnomalousPercentage": "27.20%",
+            "createdDate": 1728477541000,
+            "action": "21635fde"
+        },
+        {
+            "name": "Batch 4 (Type 1 Anomalies)",
+            "modelVersion": "v-1",
+            "totalRecordCount": 2500,
+            "anomalousRecordCount": 37,
+            "anomalousPercentage": "1.48%",
+            "actualAnomalousRecordCount": 680,
+            "actualAnomalousPercentage": "27.20%",
+            "createdDate": 1728477541000,
+            "action": "21635fde"
+        },
+        {
+            "name": "Batch 5 (Type 1 Anomalies)",
+            "modelVersion": "v-1",
+            "totalRecordCount": 2500,
+            "anomalousRecordCount": 37,
+            "anomalousPercentage": "1.48%",
+            "actualAnomalousRecordCount": 680,
+            "actualAnomalousPercentage": "27.20%",
+            "createdDate": 1728477541000,
+            "action": "21635fde"
+        },
+        {
+            "name": "Batch 6 (Type 1 Anomalies)",
+            "modelVersion": "v-1",
+            "totalRecordCount": 2500,
+            "anomalousRecordCount": 37,
+            "anomalousPercentage": "1.48%",
+            "actualAnomalousRecordCount": 680,
+            "actualAnomalousPercentage": "27.20%",
+            "createdDate": 1728477541000,
+            "action": "21635fde"
+        },
+        {
+            "name": "Batch 7 (Type 1 Anomalies)",
+            "modelVersion": "v-1",
+            "totalRecordCount": 2500,
+            "anomalousRecordCount": 37,
+            "anomalousPercentage": "1.48%",
+            "actualAnomalousRecordCount": 680,
+            "actualAnomalousPercentage": "27.20%",
+            "createdDate": 1728477541000,
+            "action": "21635fde"
+        },
+        {
+            "name": "Batch 8 (Type 1 Anomalies)",
+            "modelVersion": "v-1",
+            "totalRecordCount": 2500,
+            "anomalousRecordCount": 37,
+            "anomalousPercentage": "1.48%",
+            "actualAnomalousRecordCount": 680,
+            "actualAnomalousPercentage": "27.20%",
+            "createdDate": 1728477541000,
+            "action": "21635fde"
+        },
+        {
+            "name": "Batch 9 (Type 1 Anomalies)",
+            "modelVersion": "v-1",
+            "totalRecordCount": 2500,
+            "anomalousRecordCount": 37,
+            "anomalousPercentage": "1.48%",
+            "actualAnomalousRecordCount": 680,
+            "actualAnomalousPercentage": "27.20%",
+            "createdDate": 1728477541000,
+            "action": "21635fde"
+        },
+        {
+            "name": "Batch 10 (Type 1 Anomalies)",
+            "modelVersion": "v-1",
+            "totalRecordCount": 2500,
+            "anomalousRecordCount": 37,
+            "anomalousPercentage": "1.48%",
+            "actualAnomalousRecordCount": 680,
+            "actualAnomalousPercentage": "27.20%",
+            "createdDate": 1728477541000,
+            "action": "21635fde"
+        },
+        {
+            "name": "Batch 11 (Type 1 Anomalies)",
+            "modelVersion": "v-1",
+            "totalRecordCount": 2500,
+            "anomalousRecordCount": 37,
+            "anomalousPercentage": "1.48%",
+            "actualAnomalousRecordCount": 680,
+            "actualAnomalousPercentage": "27.20%",
+            "createdDate": 1728477541000,
+            "action": "21635fde"
+        },
+        {
+            "name": "Batch 12 (Type 1 Anomalies)",
+            "modelVersion": "v-1",
+            "totalRecordCount": 2500,
+            "anomalousRecordCount": 37,
+            "anomalousPercentage": "1.48%",
+            "actualAnomalousRecordCount": 680,
+            "actualAnomalousPercentage": "27.20%",
+            "createdDate": 1728477541000,
+            "action": "21635fde"
+        },
+        {
+            "name": "Batch 13 (Type 1 Anomalies)",
+            "modelVersion": "v-1",
+            "totalRecordCount": 2500,
+            "anomalousRecordCount": 37,
+            "anomalousPercentage": "1.48%",
+            "actualAnomalousRecordCount": 680,
+            "actualAnomalousPercentage": "27.20%",
+            "createdDate": 1728477541000,
+            "action": "21635fde"
+        },
+        {
+            "name": "Batch 14 (Type 1 Anomalies)",
+            "modelVersion": "v-1",
+            "totalRecordCount": 2500,
+            "anomalousRecordCount": 37,
+            "anomalousPercentage": "1.48%",
+            "actualAnomalousRecordCount": 680,
+            "actualAnomalousPercentage": "27.20%",
+            "createdDate": 1728477541000,
+            "action": "21635fde"
+        },
+        {
+            "name": "Batch 15 (Type 1 Anomalies)",
+            "modelVersion": "v-1",
+            "totalRecordCount": 2500,
+            "anomalousRecordCount": 37,
+            "anomalousPercentage": "1.48%",
+            "actualAnomalousRecordCount": 680,
+            "actualAnomalousPercentage": "27.20%",
+            "createdDate": 1728477541000,
+            "action": "21635fde"
+        },
+        {
+            "name": "Batch 16 (Type 1 Anomalies)",
+            "modelVersion": "v-1",
+            "totalRecordCount": 2500,
+            "anomalousRecordCount": 37,
+            "anomalousPercentage": "1.48%",
+            "actualAnomalousRecordCount": 680,
+            "actualAnomalousPercentage": "27.20%",
+            "createdDate": 1728477541000,
+            "action": "21635fde"
+        },
+        {
+            "name": "Batch 17 (Type 1 Anomalies)",
+            "modelVersion": "v-1",
+            "totalRecordCount": 2500,
+            "anomalousRecordCount": 37,
+            "anomalousPercentage": "1.48%",
+            "actualAnomalousRecordCount": 680,
+            "actualAnomalousPercentage": "27.20%",
+            "createdDate": 1728477541000,
+            "action": "21635fde"
+        }
+    ]
+}

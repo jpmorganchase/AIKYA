@@ -1,0 +1,15 @@
+{
+    "statusCode": 200,
+    "success": true,
+    "user": {
+        "company": "Bank 3",
+        "roles": [
+            "ROLE_OPERATOR",
+            "ROLE_ADMIN",
+            "ROLE_EVALUATOR"
+        ],
+        "name": "Kumar",
+        "email": "sree@test.com"
+    },
+    "message": "Success message"
+}

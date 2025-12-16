@@ -1,0 +1,302 @@
+[
+    {
+        "key": "amount",
+        "label": "Amount",
+        "value": 9097
+    },
+    {
+        "key": "avgGapTxnsRevDir1y",
+        "label": "Avg Gap Txns Rev Dir 1y",
+        "value": 40
+    },
+    {
+        "key": "avgGapTxnsSameDir1y",
+        "label": "Avg Gap Txns Same Dir 1y",
+        "value": 35
+    },
+    {
+        "key": "batchId",
+        "label": "Batch Id",
+        "value": "59652ded"
+    },
+    {
+        "key": "crdtrAccountIsSanction",
+        "label": "Crdtr Account Is Sanction",
+        "value": 1
+    },
+    {
+        "key": "crdtrAccountNum",
+        "label": "Crdtr Account Num",
+        "value": "GB91LMQM47712503597425"
+    },
+    {
+        "key": "crdtrAddress",
+        "label": "Crdtr Address",
+        "value": "Studio 6\nNatasha glen\nPort Joyce\nL87 4LQ"
+    },
+    {
+        "key": "crdtrAddress1",
+        "label": "Crdtr Address1",
+        "value": ""
+    },
+    {
+        "key": "crdtrAge",
+        "label": "Crdtr Age",
+        "value": 35
+    },
+    {
+        "key": "crdtrAmountIsFlagged",
+        "label": "Crdtr Amount Is Flagged",
+        "value": 1
+    },
+    {
+        "key": "crdtrBankIsSanction",
+        "label": "Crdtr Bank Is Sanction",
+        "value": 0
+    },
+    {
+        "key": "crdtrBicCode",
+        "label": "Crdtr Bic Code",
+        "value": "023567274"
+    },
+    {
+        "key": "crdtrCity",
+        "label": "Crdtr City",
+        "value": "East Mohammedville"
+    },
+    {
+        "key": "crdtrCountry",
+        "label": "Crdtr Country",
+        "value": "XC"
+    },
+    {
+        "key": "crdtrCountryEncode",
+        "label": "Crdtr Country Encode",
+        "value": 9
+    },
+    {
+        "key": "crdtrCountryIsSanction",
+        "label": "Crdtr Country Is Sanction",
+        "value": 1
+    },
+    {
+        "key": "crdtrDiffThreshold",
+        "label": "Crdtr Diff Threshold",
+        "value": 12329.82
+    },
+    {
+        "key": "crdtrEmail",
+        "label": "Crdtr Email",
+        "value": "zbaker@hotmail.co.uk"
+    },
+    {
+        "key": "crdtrEmailReputation",
+        "label": "Crdtr Email Reputation",
+        "value": 0.51
+    },
+    {
+        "key": "crdtrFirstName",
+        "label": "Crdtr First Name",
+        "value": ""
+    },
+    {
+        "key": "crdtrHistTxnsFlagPer",
+        "label": "Crdtr Hist Txns Flag Per",
+        "value": 38
+    },
+    {
+        "key": "crdtrIsPhoneActive1m",
+        "label": "Crdtr Is Phone Active 1m",
+        "value": 0
+    },
+    {
+        "key": "crdtrLastName",
+        "label": "Crdtr Last Name",
+        "value": ""
+    },
+    {
+        "key": "crdtrName",
+        "label": "Crdtr Name",
+        "value": "Sarah Hussain-Knight"
+    },
+    {
+        "key": "crdtrPhone",
+        "label": "Crdtr Phone",
+        "value": "+44(0)1144960589"
+    },
+    {
+        "key": "crdtrState",
+        "label": "Crdtr State",
+        "value": ""
+    },
+    {
+        "key": "crdtrStdDevThHist",
+        "label": "Crdtr Std Dev Th Hist",
+        "value": 548.42
+    },
+    {
+        "key": "crdtrZipcode",
+        "label": "Crdtr Zipcode",
+        "value": "L31 0JW"
+    },
+    {
+        "key": "createdDate",
+        "label": "Created Date",
+        "value": 1724179740000
+    },
+    {
+        "key": "currency",
+        "label": "Currency",
+        "value": "XCD"
+    },
+    {
+        "key": "dbtrAccountIsSanction",
+        "label": "Dbtr Account Is Sanction",
+        "value": 0
+    },
+    {
+        "key": "dbtrAccountNum",
+        "label": "Dbtr Account Num",
+        "value": "GB62TJQG89692113110612"
+    },
+    {
+        "key": "dbtrAddress",
+        "label": "Dbtr Address",
+        "value": "9 Rachel ridge\nJonesville\nDN7 1EQ"
+    },
+    {
+        "key": "dbtrAddress1",
+        "label": "Dbtr Address1",
+        "value": ""
+    },
+    {
+        "key": "dbtrAge",
+        "label": "Dbtr Age",
+        "value": 39
+    },
+    {
+        "key": "dbtrAmountIsFlagged",
+        "label": "Dbtr Amount Is Flagged",
+        "value": 0
+    },
+    {
+        "key": "dbtrBankIsSanction",
+        "label": "Dbtr Bank Is Sanction",
+        "value": 0
+    },
+    {
+        "key": "dbtrBicCode",
+        "label": "Dbtr Bic Code",
+        "value": "126753875"
+    },
+    {
+        "key": "dbtrCity",
+        "label": "Dbtr City",
+        "value": "New Conorport"
+    },
+    {
+        "key": "dbtrCountry",
+        "label": "Dbtr Country",
+        "value": "GB"
+    },
+    {
+        "key": "dbtrCountryEncode",
+        "label": "Dbtr Country Encode",
+        "value": 2
+    },
+    {
+        "key": "dbtrCountryIsSanction",
+        "label": "Dbtr Country Is Sanction",
+        "value": 0
+    },
+    {
+        "key": "dbtrDiffThreshold",
+        "label": "Dbtr Diff Threshold",
+        "value": 12341.69
+    },
+    {
+        "key": "dbtrEmail",
+        "label": "Dbtr Email",
+        "value": "jessicarichardson@outlook.com"
+    },
+    {
+        "key": "dbtrEmailReputation",
+        "label": "Dbtr Email Reputation",
+        "value": 0.48
+    },
+    {
+        "key": "dbtrFirstName",
+        "label": "Dbtr First Name",
+        "value": ""
+    },
+    {
+        "key": "dbtrHistTxnsFlagPer",
+        "label": "Dbtr Hist Txns Flag Per",
+        "value": 39
+    },
+    {
+        "key": "dbtrIsPhoneActive1m",
+        "label": "Dbtr Is Phone Active 1m",
+        "value": 0
+    },
+    {
+        "key": "dbtrLastName",
+        "label": "Dbtr Last Name",
+        "value": ""
+    },
+    {
+        "key": "dbtrName",
+        "label": "Dbtr Name",
+        "value": "Charles Hammond-Dale"
+    },
+    {
+        "key": "dbtrPhone",
+        "label": "Dbtr Phone",
+        "value": "+44(0)115 496 0078"
+    },
+    {
+        "key": "dbtrState",
+        "label": "Dbtr State",
+        "value": ""
+    },
+    {
+        "key": "dbtrStdDevThHist",
+        "label": "Dbtr Std Dev Th Hist",
+        "value": 514.48
+    },
+    {
+        "key": "dbtrZipcode",
+        "label": "Dbtr Zipcode",
+        "value": "W3G 1TG"
+    },
+    {
+        "key": "flag",
+        "label": "Flag",
+        "value": 1
+    },
+    {
+        "key": "id",
+        "label": "Id",
+        "value": 2001
+    },
+    {
+        "key": "isCcySanctioned",
+        "label": "Is Ccy Sanctioned",
+        "value": 0
+    },
+    {
+        "key": "numTxnsRevDir1y",
+        "label": "Num Txns Rev Dir 1y",
+        "value": 37
+    },
+    {
+        "key": "numTxnsSameDir1y",
+        "label": "Num Txns Same Dir 1y",
+        "value": 39
+    },
+    {
+        "key": "txnDateTs",
+        "label": "Txn Date Ts",
+        "value": 1623837166000
+    }
+]

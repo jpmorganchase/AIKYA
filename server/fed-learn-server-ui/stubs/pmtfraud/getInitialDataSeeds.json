@@ -1,0 +1,42 @@
+[
+    {
+        "createdDate": "2024-01-17T23:49:56.000+00:00",
+        "fileName": "data_init_bank1.csv",
+        "filePath": "/apps/seeds",
+        "id": 1,
+        "label": "data_init_bank1",
+        "lastUpdateDate": "2024-01-17T23:49:56.000+00:00",
+        "status": "Initial",
+        "type": "payment"
+    },
+    {
+        "createdDate": "2024-01-17T23:49:59.000+00:00",
+        "fileName": "data_mix_bank1.csv",
+        "filePath": "/apps/seeds",
+        "id": 2,
+        "label": "data_mix_bank1",
+        "lastUpdateDate": "2024-01-17T23:49:59.000+00:00",
+        "status": "Initial",
+        "type": "payment"
+    },
+    {
+        "createdDate": "2024-01-17T23:50:03.000+00:00",
+        "fileName": "data_fraud_bank1.csv",
+        "filePath": "/apps/seeds",
+        "id": 3,
+        "label": "data_fraud_bank1",
+        "lastUpdateDate": "2024-01-17T23:50:03.000+00:00",
+        "status": "Initial",
+        "type": "payment"
+    },
+    {
+        "createdDate": "2024-01-17T23:50:06.000+00:00",
+        "fileName": "data_final_bank1.csv",
+        "filePath": "/apps/seeds",
+        "id": 4,
+        "label": "data_final_bank1",
+        "lastUpdateDate": "2024-01-17T23:50:06.000+00:00",
+        "status": "Initial",
+        "type": "payment"
+    }
+]

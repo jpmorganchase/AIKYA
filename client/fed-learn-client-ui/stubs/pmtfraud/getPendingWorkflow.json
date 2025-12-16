@@ -1,0 +1,60 @@
+{
+    "version": "v-0",
+    "result": [
+        {
+            "workflowId": 1,
+            "currentStep": 2,
+            "workflowTraceId": "e53bfc73-MTAxXX-75dc",
+            "workflowStatus": "Pending",
+            "dataLoadDate": "2024-10-11 14:32:21",
+            "trainingDate": "2024-10-11 14:32:20",
+            "version": "",
+            "steps": [
+                {
+                    "id": 1,
+                    "step": 1,
+                    "stepDesc": "Initiate Data load",
+                    "source": "FED-LEARN-ORCHESTRATOR-CLIENT",
+                    "target": "DATA-PROCESSOR",
+                    "stepStatus": "Complete",
+                    "label": "Load Data",
+                    "createdDate": "2024-10-11 14:32:21",
+                    "lastUpdateDate": "2024-10-11 14:32:33"
+                },
+                {
+                    "id": 2,
+                    "step": 2,
+                    "stepDesc": "Request for Prediction",
+                    "source": "FED-LEARN-ORCHESTRATOR-CLIENT",
+                    "target": "FED-LEARN-AGENT-CLIENT",
+                    "stepStatus": "Complete",
+                    "label": "Predict",
+                    "createdDate": "2024-10-11 14:32:21",
+                    "lastUpdateDate": "2024-10-11 14:32:33"
+                },
+                {
+                    "id": 3,
+                    "step": 5,
+                    "stepDesc": "User Feedback",
+                    "source": "FED-LEARN-ORCHESTRATOR-CLIENT",
+                    "target": "FED-LEARN-AGENT-CLIENT",
+                    "stepStatus": "Pending",
+                    "label": "Aggregate",
+                    "createdDate": "2024-10-11 14:32:33",
+                    "lastUpdateDate": "2024-10-11 14:32:33"
+                },
+                {
+                    "id": 0,
+                    "step": 8,
+                    "stepDesc": "Update Global Aggregated Model",
+                    "source": "FED-LEARN-ORCHESTRATOR-CLIENT",
+                    "target": "FED-LEARN-ORCHESTRATOR-CLIENT",
+                    "stepStatus": "Initial",
+                    "label": "Receive & Update Model",
+                    "createdDate": "2024-10-11-145721752",
+                    "lastUpdateDate": "2024-10-11-145721752"
+                }
+            ]
+        }
+    ]
+}

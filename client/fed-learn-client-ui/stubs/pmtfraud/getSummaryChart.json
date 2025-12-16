@@ -1,0 +1,51 @@
+{
+    "performance": {
+        "name": "Model Performance",
+        "series": [
+            {
+                "id": "Local Model Performance",
+                "label": "Local Model Performance",
+                "data": [
+                    "0.76",
+                    "0.76",
+                    "0.76",
+                    "0.76",
+                    "0.76"
+                ]
+            },
+            {
+                "id": "Global Model Performance",
+                "label": "Global Model Performance",
+                "data": [
+                    "0.76",
+                    "0.82",
+                    "0.65",
+                    "0.71",
+                    "0.68"
+                ]
+            }
+        ],
+        "xaxis": [
+            "Jul 14",
+            "Jul 17",
+            "Jul 20",
+            "Jul 23",
+            "Jul 26"
+        ]
+    },
+    "contributions": {
+        "name": "BANK1  Model Contribution",
+        "contribution": [
+            {
+                "name": "BANK1",
+                "value": 67.81609195402298,
+                "dbValue": "59"
+            },
+            {
+                "name": "OTHER",
+                "value": 32.18390804597701,
+                "dbValue": "28"
+            }
+        ]
+    }
+}

@@ -1,0 +1,1171 @@
+{
+	"info": {
+		"_postman_id": "93b8023e-4f9e-48b5-b1ea-37b659766573",
+		"name": "Aikya-Orchestrator-Client",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6711410"
+	},
+	"item": [
+		{
+			"name": "loadLocalData",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"followRedirects": true,
+				"disableUrlEncoding": false,
+				"disableCookies": false
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"fileName\": \"bank1_[type1]_[app_frac_0.9]_[no_overlap]_[eval_2].csv\", \n\t\"domainType\": \"payment_fraud\",\n\t\"mockerEnabled\": false\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/orchestrator-cli/api/loadLocalData",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"orchestrator-cli",
+						"api",
+						"loadLocalData"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "loadLocalData Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"followRedirects": true,
+				"disableUrlEncoding": false,
+				"disableCookies": false
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"fileName\": \"bank1_test.csv\", \n\t\"domainType\": \"payment\",\n\t\"label\": \"testLabel\",\n    \"batchId\": \"er01r02121\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/orchestrator-cli/api/updateDataSeedMeta",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"orchestrator-cli",
+						"api",
+						"updateDataSeedMeta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "signin-bank1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"followRedirects": true,
+				"disableUrlEncoding": false,
+				"disableCookies": false
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"username\": \"test1@gmail.com\",\n  \"password\": \"Password01!\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.fedlearn.network/bank1/api/signin",
+					"protocol": "https",
+					"host": [
+						"api",
+						"fedlearn",
+						"network"
+					],
+					"path": [
+						"bank1",
+						"api",
+						"signin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "signin-local",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"followRedirects": true,
+				"disableUrlEncoding": false,
+				"disableCookies": false
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"username\": \"test1@gmail.com\",\n  \"password\": \"Password01!\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/orchestrator-cli/api/signin/bank1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"orchestrator-cli",
+						"api",
+						"signin",
+						"bank1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getInitialDataSeeds",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"followRedirects": true,
+				"disableUrlEncoding": false,
+				"disableCookies": false
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/orchestrator-cli/api/payment_fraud/getInitialDataSeeds",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"orchestrator-cli",
+						"api",
+						"payment_fraud",
+						"getInitialDataSeeds"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "model",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"followRedirects": true,
+				"disableUrlEncoding": false,
+				"disableCookies": false
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/orchestrator-cli/api/payment/model",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"orchestrator-cli",
+						"api",
+						"payment",
+						"model"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "reset",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"followRedirects": true,
+				"disableUrlEncoding": false,
+				"disableCookies": false
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/orchestrator-cli/api/reset",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"orchestrator-cli",
+						"api",
+						"reset"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "domains",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"followRedirects": true,
+				"disableUrlEncoding": false,
+				"disableCookies": false
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/orchestrator-cli/api/domains",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"orchestrator-cli",
+						"api",
+						"domains"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "worklflowRunModel",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"followRedirects": true,
+				"disableUrlEncoding": false,
+				"disableCookies": false
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/orchestrator-cli/api/payment/worklflowRunModel",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"orchestrator-cli",
+						"api",
+						"payment",
+						"worklflowRunModel"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "globalWeightRunModel",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"followRedirects": true,
+				"disableUrlEncoding": false,
+				"disableCookies": false
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/orchestrator-cli/api/payment/globalWeightRunModel",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"orchestrator-cli",
+						"api",
+						"payment",
+						"globalWeightRunModel"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getDataItem",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"followRedirects": true,
+				"disableUrlEncoding": false,
+				"disableCookies": false
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/orchestrator-cli/api/payment_fraud/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"orchestrator-cli",
+						"api",
+						"payment_fraud",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getItemBatch",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"followRedirects": true,
+				"disableUrlEncoding": false,
+				"disableCookies": false
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/orchestrator-cli/api/payment_fraud/batch/d80c5afb",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"orchestrator-cli",
+						"api",
+						"payment_fraud",
+						"batch",
+						"d80c5afb"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getItemBatch-credit",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"followRedirects": true,
+				"disableUrlEncoding": false,
+				"disableCookies": false
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/orchestrator-cli/api/credit_card_fraud/batch/91bde88",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"orchestrator-cli",
+						"api",
+						"credit_card_fraud",
+						"batch",
+						"91bde88"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getItemBatch-AgGrid",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"followRedirects": true,
+				"disableUrlEncoding": false,
+				"disableCookies": false
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/orchestrator-cli/api/payment_fraud/batch-grid/d80c5afb",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"orchestrator-cli",
+						"api",
+						"payment_fraud",
+						"batch-grid",
+						"d80c5afb"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getDiffItemBatch-Aggrid",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"followRedirects": true,
+				"disableUrlEncoding": false,
+				"disableCookies": false
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/orchestrator-cli/api/payment_fraud/batch-diff/d80c5afb",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"orchestrator-cli",
+						"api",
+						"payment_fraud",
+						"batch-diff",
+						"d80c5afb"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getItemBatchPaging",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"followRedirects": true,
+				"disableUrlEncoding": false,
+				"disableCookies": false
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/orchestrator-cli/api/payment/batch-paging/57d15cdf?page=1&size=50",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"orchestrator-cli",
+						"api",
+						"payment",
+						"batch-paging",
+						"57d15cdf"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "size",
+							"value": "50"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "dashboard",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"followRedirects": true,
+				"disableUrlEncoding": false,
+				"disableCookies": false
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/orchestrator-cli/api/payment_fraud/dashboard",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"orchestrator-cli",
+						"api",
+						"payment_fraud",
+						"dashboard"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "dashboard-dynamic",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"followRedirects": true,
+				"disableUrlEncoding": false,
+				"disableCookies": false
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/orchestrator-cli/api/payment_fraud/dashboard/dynamic",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"orchestrator-cli",
+						"api",
+						"payment_fraud",
+						"dashboard",
+						"dynamic"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "sendFeedback",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"followRedirects": true,
+				"disableUrlEncoding": false,
+				"disableCookies": false
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"feedbacks\": [\n    {\n      \"modelDataId\":4217,\n      \"score\": \"8\",\n      \"isCorrect\": true\n    }\n  ],\n\t\"batchId\": \"9fa9ba1f\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/orchestrator-cli/api/sendFeedback",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"orchestrator-cli",
+						"api",
+						"sendFeedback"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "toggleWorklflowRunModel",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"followRedirects": true,
+				"disableUrlEncoding": false,
+				"disableCookies": false
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/orchestrator-cli/api/toggle/worklflowRunModel/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"orchestrator-cli",
+						"api",
+						"toggle",
+						"worklflowRunModel",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "toggleGlobalWeightRunModel",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"followRedirects": true,
+				"disableUrlEncoding": false,
+				"disableCookies": false
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/orchestrator-cli/api/toggle/globalWeightRunModel/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"orchestrator-cli",
+						"api",
+						"toggle",
+						"globalWeightRunModel",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "sendGlobalModelAggregate",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"followRedirects": true,
+				"disableUrlEncoding": false,
+				"disableCookies": false
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/orchestrator-cli/api/sendGlobalModelAggregate/679ca97a-MTAxXX-b61a",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"orchestrator-cli",
+						"api",
+						"sendGlobalModelAggregate",
+						"679ca97a-MTAxXX-b61a"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getPendingWorkflow",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"followRedirects": true,
+				"disableUrlEncoding": false,
+				"disableCookies": false
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/orchestrator-cli/api/payment_fraud/getPendingWorkflow",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"orchestrator-cli",
+						"api",
+						"payment_fraud",
+						"getPendingWorkflow"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getLatestGlobalModel",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"followRedirects": true,
+				"disableUrlEncoding": false,
+				"disableCookies": false
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "idToken",
+						"value": "eyJraWQiOiIreVwvZWNYQ2xjSTFsM0JCaXFodmV3Z3FPRmxRenVDcU9OY1ZSQ3FwSzJETT0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJlZDUwMGExYi0yZjRlLTQzNjAtYmVjNi1kNmEwNjQ2MjNjOGIiLCJjb2duaXRvOmdyb3VwcyI6WyJST0xFX0FETUlOIiwiUk9MRV9FVkFMVUFUT1IiXSwiZW1haWxfdmVyaWZpZWQiOnRydWUsImlzcyI6Imh0dHBzOlwvXC9jb2duaXRvLWlkcC51cy1lYXN0LTEuYW1hem9uYXdzLmNvbVwvdXMtZWFzdC0xX2p1ZXFUNmladSIsImNvZ25pdG86dXNlcm5hbWUiOiJlZDUwMGExYi0yZjRlLTQzNjAtYmVjNi1kNmEwNjQ2MjNjOGIiLCJjdXN0b206Y29tcGFueSI6IkpQTSIsIm9yaWdpbl9qdGkiOiJjZjJiNWMxZS0yN2UyLTRlMDEtYjhmNC1iZGEyY2Q3ZWYyMmYiLCJjb2duaXRvOnJvbGVzIjpbImFybjphd3M6aWFtOjo1NDM5NDA5ODM4NjI6cm9sZVwvUk9MRV9GTF9FVkFMVUFUT1IiLCJhcm46YXdzOmlhbTo6NTQzOTQwOTgzODYyOnJvbGVcL1JPTEVfRkxfQURNSU4iXSwiYXVkIjoiNmlmZGRqdWJvYjMyZmM0aWwwN2Yxcm9ldnYiLCJldmVudF9pZCI6IjEwOTYwYzRhLTlmYjUtNDE3My1hYTM1LTBmYWNiM2MyYzM2MSIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNzI1ODYzMDA0LCJuYW1lIjoidGVzdDEiLCJleHAiOjE3MjU4NjY2MDQsImlhdCI6MTcyNTg2MzAwNCwianRpIjoiOGQyMTNhMTktMmFlYy00ODA1LTgxMDItMmExMzNhYTQxMzdjIiwiZW1haWwiOiJ0ZXN0MUBnbWFpbC5jb20ifQ.CjhU_Z3JiHcj4iu14229hOW8k0GL3_eEmQU_ze6sH04y2FdJ0IZ3JGw9h4EH6OxAWVuypZRnGIpcrvRoj4bFjARzoRx1b4hBpNrr7mU0VamM0LEyUcqf-uGFdDKe6Wavecs1xN-et5SMFA9nBRv6H-YkjArgR0946R5yeKJzRCDziO601hmNEsWzJOnp-D6NAk7Mlla2Rboq0Quwdek6_vmnRMPDZKJvlOWlITMrKA-mNH_HGz7OcFX06Gdc9Pjr2S-f3OOCXfz9tSRarDjAot52wyWNo8E-1VA0mcKske6YuIws9jPBy1ahahzCooYkpzT5lOD1I03n43lEULPRcw"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/orchestrator-cli/api/payment_fraud/getLatestGlobalModel?version=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"orchestrator-cli",
+						"api",
+						"payment_fraud",
+						"getLatestGlobalModel"
+					],
+					"query": [
+						{
+							"key": "version",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
