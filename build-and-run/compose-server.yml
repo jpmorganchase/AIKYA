@@ -132,51 +132,6 @@ services:
     networks:
       - aikya-fl-server-net
 
-  server-ui:
-    # container_name: fl-server-ui
-    image: ${SERVER_COMPONENT_IMAGE_TAG_PREFIX}/ui:${SERVER_UI_IMAGE_VERSION:-latest}
-    build:
-      context: ${SERVER_UI_BUILD_CONTEXT}
-      dockerfile: Dockerfile
-      args:
-        REACT_APP_ENV: ${REACT_APP_ENV}
-        REACT_APP_BANK: ${REACT_APP_BANK:-network}
-        GENERATE_SOURCEMAP: false
-        DISABLE_ESLINT_PLUGIN: true
-    environment:
-      REACT_APP_ENV: ${REACT_APP_ENV}
-      REACT_APP_BANK: ${REACT_APP_BANK:-network}
-      SERVER_AGGREGATOR_PROTOCOL: ${SERVER_AGGREGATOR_PROTOCOL}
-      SERVER_FL_AGGREGATOR_URL: ${SERVER_FL_AGGREGATOR_URL}
-      SERVER_ORCHESTRATOR_PROTOCOL: ${SERVER_ORCHESTRATOR_PROTOCOL}
-      SERVER_FL_ORCHESTRATOR_URL: ${SERVER_FL_ORCHESTRATOR_URL}
-    ports:
-      - "${SERVER_UI_PORT_MAP_TO_HOST_PORT:-4000}:80"
-    depends_on:
-      server-orchestrator:
-        condition: service_healthy
-    healthcheck:
-      test: ["CMD", "curl", "-w='\n'", "http://localhost:80/"]
-      interval: 30s
-      timeout: 10s
-      retries: 3
-      start_period: 30s
-    networks:
-      - aikya-fl-server-net
-    deploy:
-      resources:
-        limits:
-          memory: ${SERVER_UI_MEMORY_LIMIT:-512M}
-          cpus: ${SERVER_UI_CPU_LIMIT:-1.0}
-        reservations:
-          memory: ${SERVER_UI_MEMORY_RESERVATION:-256M}
-          cpus: ${SERVER_UI_CPU_RESERVATION:-0.25}
-    logging:
-      driver: "json-file"
-      options:
-        max-size: "10m"
-        max-file: "3"
-
 networks:
   aikya-fl-server-net:
     name: aikya-fl-server-net

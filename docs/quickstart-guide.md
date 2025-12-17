@@ -1,7 +1,9 @@
 # AIKYA Federated Learning - Quickstart Guide
-**⚠️ Aikya is a Proof of Concept and not meant for production usage**
 
- This guide will help you set up and run your first federated learning experiment with simulated bank clients.
+**⚠️ Aikya is a Proof of Concept project and not meant for production usage**
+
+ This guide will help you set up and run your first federated learning experiment with synthetically generated datasets and simulated partcipants and server.
+
 
 ## Table of Contents
 
@@ -18,15 +20,18 @@
     - [⚠️ IMPORTANT: Clean Docker Environment](#️-important-clean-docker-environment)
   - [2. Start the Federated Learning Server](#2-start-the-federated-learning-server)
   - [3. Start the Client Banks](#3-start-the-client-banks)
+    - [Bank 1](#bank-1)
+    - [Bank 2](#bank-2)
   - [4. Verify Your Setup](#4-verify-your-setup)
 - [Understanding the Components](#understanding-the-components)
   - [Server Component Details](#server-component-details)
   - [Client Components](#client-components)
-    - [Bank 1](#bank-1)
-    - [Bank 2](#bank-2)
+    - [Bank 1](#bank-1-1)
+    - [Bank 2](#bank-2-1)
 - [Accessing the Platform](#accessing-the-platform)
   - [🖥️ Web Interfaces](#️-web-interfaces)
-  - [🔧 API Endpoints](#-api-endpoints)
+    - [Bank 1 Dashboard](#bank-1-dashboard)
+    - [Bank 2 Dashboard](#bank-2-dashboard)
 - [Next Steps](#next-steps)
 - [Troubleshooting](#troubleshooting)
   - [Common Issues](#common-issues)
@@ -52,7 +57,6 @@ AIKYA implements a federated learning architecture with the following key compon
 - **FL Server Orchestrator**: Coordinates the federated learning process
 - **FL Server Aggregator**: Combines model updates from clients using algorithms like FedAvg
 - **FL Server Database**: Stores orchestration data and aggregation results
-- **FL Server UI**: Web interface for monitoring and controlling federated learning experiments
 
 ### Client Components (Per Bank)
 
@@ -128,9 +132,7 @@ For the best experience, start with a clean Docker environment:
 > Skip this step if you have other important Docker containers/images
 
 ```bash
-docker volume prune -af \
-&& docker network prune -f \
-&& docker system prune -af
+docker volume prune -af && docker network prune -f && docker system prune -af
 ```
 
 ### 2. Start the Federated Learning Server
@@ -138,7 +140,6 @@ docker volume prune -af \
 Launch the server components that will coordinate the federated learning process:
 
 ```bash
-# Build and start the FL server (orchestrator, aggregator, database, UI)
 docker compose -f compose-server.yml --env-file env-vars/server.vars.env up -d --build
 ```
 
@@ -148,17 +149,20 @@ This command will:
 - Start the server orchestrator (port `9000`)
 - Start the server aggregator (port `9001`)
 - Start the server database (port `3310`)
-- Start the server web UI (port `4000`)
 
 ### 3. Start the Client Banks
 
-Launch two simulated bank clients that will participate in federated learning:
+Launch bank nodes that will participate in federated learning using the following commands
+
+#### Bank 1
 
 ```bash
-# Build and start Bank 1 client components
 docker compose -f compose-client.yml --env-file env-vars/bank1.vars.env up -d --build
+```
 
-# Build and start Bank 2 client components  
+#### Bank 2
+
+```bash
 docker compose -f compose-client.yml --env-file env-vars/bank2.vars.env up -d --build
 ```
 
@@ -199,7 +203,6 @@ You should see approximately 11 containers running:
 | **Server Orchestrator** | Coordinates FL process across clients     | 9000 | <http://localhost:9000> |
 | **Server Aggregator**   | Performs model aggregation (FedAvg, etc.) | 9001 | Internal Only           |
 | **Server Database**     | Stores orchestration and aggregation data | 3310 | Internal only           |
-| **Server UI**           | Web dashboard for monitoring experiments  | 4000 | <http://localhost:4000> |
 
 ### Client Components
 
@@ -229,24 +232,15 @@ Once all containers are running, you can access the different interfaces:
 
 ### 🖥️ Web Interfaces
 
-1. **Server Dashboard** (Experiment Management)
-   - URL: <http://localhost:4000>
-   - Use this to: Monitor global experiments, view aggregation results, manage federated learning rounds
+#### Bank 1 Dashboard
 
-2. **Bank 1 Dashboard**
-   - URL: <http://localhost:3000>
-   - Use this to: Manage Bank 1's local data, monitor training progress, view local model performance
+- URL: <http://localhost:3000>
+- Use this to: Manage Bank 1's local data, monitor training progress, view local model performance
 
-3. **Bank 2 Dashboard**
-   - URL: <http://localhost:3001>
-   - Use this to: Manage Bank 2's local data, monitor training progress, view local model performance
+#### Bank 2 Dashboard
 
-### 🔧 API Endpoints
-
-- **Server Orchestrator API**: <http://localhost:9000/orchestrator-server/api>
-- **Server Aggregator API**: <http://localhost:9001/aggregate/api>
-- **Bank 1 Orchestrator API**: <http://localhost:8080/orchestrator-cli/api>
-- **Bank 2 Orchestrator API**: <http://localhost:8081/orchestrator-cli/api>
+- URL: <http://localhost:3001>
+- Use this to: Manage Bank 2's local data, monitor training progress, view local model performance
 
 ## Next Steps
 
