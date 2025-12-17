@@ -1,6 +1,7 @@
 # AIKYA Federated Learning - Experiment Guide
+**⚠️ Aikya is a Proof of Concept project and not meant for production usage**
 
-Learn how to run your first federated learning experiment using AIKYA's fraud detection capabilities. This guide walks you through conducting experiments with multiple datasets and federated learning algorithms.
+This guide walks you through conducting experiments with multiple datasets and federated learning algorithms.
 
 ## Table of Contents
 
