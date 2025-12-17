@@ -4,9 +4,8 @@ AIKYA is a proof-of-concept project that leverages federated learning frameworks
 
 This repository is intended for engineers, researchers, and technically inclined practitioners exploring federated learning architectures. It is not intended for production use.
 
-## Table of Contents
+## Table of Contents <!-- omit in toc -->
 
-- [Table of Contents](#table-of-contents)
 - [System Architecture](#system-architecture)
 - [Build and run](#build-and-run)
 - [Sequence flow](#sequence-flow)
