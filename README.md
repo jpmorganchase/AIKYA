@@ -20,7 +20,8 @@ This repository is intended for engineers, researchers, and technically inclined
 
 ## System Architecture
 
-The permissioned experimental federated learning setup employs a client-server architecture. Network Participants are clients, and the Network Server forms the server. Fig. 3 provides a high-level overview of the system architecture and components
+The permissioned experimental federated learning setup employs a client-server architecture. Network Participants are clients, and the Network Server forms the server. 
+Fig. 3 provides a high-level overview of the system architecture and components.
 
 ![System Architecture](./docs/resources/Aikya-Network-Diagram.png)
 
@@ -33,7 +34,8 @@ The permissioned experimental federated learning setup employs a client-server a
 
 ## Sequence flow
 
-All the experiments are entirely driven via the project's custom user interface, ensuring reproducibility and traceability. Prior to interaction, sample synthetically generated datasets are loaded onto client nodes for the Data Processor service to ingest and reference in the database. Client UIs are accessible via unique URIs for each participant, with client systems physically isolated on distinct machines. All subsequent steps assume network bootstrapping is complete. The diagram below summarizes the sequence of flow visually. Please refer to the enumerated points for more details on each step.
+All the experiments are entirely driven via the project's custom user interface, ensuring reproducibility and traceability. Prior to interaction, sample synthetically generated datasets are loaded onto client nodes for the Data Processor service to ingest and reference in the database. Client UIs are accessible via unique URIs for each participant, with client systems physically isolated on distinct machines. All subsequent steps assume network bootstrapping is complete. 
+The diagram below summarizes the sequence of flow visually. Please refer to the enumerated points for more details on each step.
 
 ![Sequence Flow](./docs/resources/Aikya-Workflow-Diagram.png)
 # Data
@@ -59,7 +61,7 @@ The repository uses synthetic or simulated datasets for experimentation. No real
 
 ### Does AIKYA provide privacy or security guarantees?
 
-No. AIKYA demonstrates federated learning mechanics only. It does not implement or guarantee:\n- Secure aggregation\n- Differential privacy\n- Cryptographic protections\n- Adversarial robustness
+No. AIKYA demonstrates federated learning mechanics only. It does not implement or guarantee: Secure aggregationDifferential privacyCryptographic protections Adversarial robustness
 
 ### How does AIKYA differ from centralized machine learning?
 
@@ -71,7 +73,7 @@ At this time, external pull requests are not accepted. The repository is maintai
 
 ### How can I engage with the project?
 
-Users are encouraged to:\n- Review the code\n- Reproduce experiments\n- Open issues for questions, clarifications, or research discussion
+Users are encouraged to Review the code, Reproduce experiments Open issues for questions, clarifications, or research discussion
 
 ### Are performance results representative of real-world systems?
 
@@ -90,12 +92,7 @@ This repository is an active research codebase, and contributions are currently 
 
 # Citation
 
-@article{aikya2025,
-  title={Project AIKYA: Enhanced Anomaly Detection in Financial Transactions through Decentralized AI},
-  author={J.P. Morgan and BNY},
-  year={2025},
-  url={https://github.com/jpmorganchase/AIKYA}
-}
+J.P. Morgan and BNY (2025). *Project AIKYA: Enhanced Anomaly Detection in Financial Transactions through Decentralized AI*. https://www.jpmorgan.com/kinexys/content-hub/project-aikya
 
 ## Notice
 
