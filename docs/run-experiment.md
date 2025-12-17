@@ -1,10 +1,11 @@
 # AIKYA Federated Learning - Experiment Guide
 
-Learn how to run your first federated learning experiment using AIKYA's fraud detection capabilities. This guide walks you through conducting experiments with multiple datasets and federated learning algorithms.
+**⚠️ Aikya is a Proof of Concept project and not meant for production usage**
 
-## Table of Contents
+This guide will help you set up and run your first federated learning experiment with simulated participants and server.
 
-- [Table of Contents](#table-of-contents)
+## Table of Contents <!-- omit in toc -->
+
 - [Prerequisites](#prerequisites)
 - [Understanding the Experiment](#understanding-the-experiment)
   - [What You'll Accomplish](#what-youll-accomplish)
@@ -48,7 +49,7 @@ Before running experiments, ensure you have completed the [Quickstart Guide](./q
 
 ✅ **All AIKYA services running**
 
-- Server components (orchestrator, aggregator, database, UI)
+- Server components (orchestrator, aggregator, database)
 - Bank 1 client components (all services operational)
 - Bank 2 client components (all services operational)
 
@@ -100,16 +101,16 @@ Located in: `/clien/seeds/payment_fraud/`
 
 **Dataset Types:**
 
-- **No Fraud Datasets**: Clean transaction data without fraudulent patterns
+- **No anomalies Datasets**: Clean transaction data without anomalies
   - `bank1_[no_fraud]_[app_frac_1]_[no_overlap]_[1-2].csv`
   - `bank2_[no_fraud]_[app_frac_1]_[no_overlap]_[1-2].csv`
 
-- **Type 1 Fraud Patterns**: Moderate complexity fraud scenarios
+- **Type 1 Anomaly Patterns**: Moderate complexity Anomaly scenarios
   - Evaluation sets: `bank*_[type1]_[app_frac_0.9]_[no_overlap]_[eval_1-5].csv`
   - Training sets: `bank*_[type1]_[app_frac_0.9]_[no_overlap]_[gen_train_1-2].csv`
   - Scaling sets: `bank*_[type1]_[app_frac_0.9]_[no_overlap]_[scaling_1].csv`
 
-- **Type 2 Fraud Patterns**: Complex fraud scenarios with advanced patterns
+- **Type 2 anomalies Patterns**: Complex Anomaly scenarios with advanced patterns
   - Evaluation sets: `bank*_[type2]_[app_frac_0.9]_[no_overlap]_[eval_1-5].csv`
   - Training sets: `bank*_[type2]_[app_frac_0.9]_[no_overlap]_[gen_train_1-2].csv`
   - Scaling sets: `bank*_[type2]_[app_frac_0.9]_[no_overlap]_[scaling_1].csv`
@@ -132,7 +133,6 @@ docker ps --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}" | grep aikya
 # Test web interface connectivity
 curl -s http://localhost:3000 > /dev/null && echo "Bank 1 UI: ✅" || echo "Bank 1 UI: ❌"
 curl -s http://localhost:3001 > /dev/null && echo "Bank 2 UI: ✅" || echo "Bank 2 UI: ❌"
-curl -s http://localhost:4000 > /dev/null && echo "Server UI: ✅" || echo "Server UI: ❌"
 ```
 
 ### Access the Dashboards
@@ -143,7 +143,6 @@ Open the following URLs in separate browser tabs:
 |-----------|-----|---------|
 | **Bank 1 (JPM Simulation)** | <http://localhost:3000> | Manage Bank 1 data and local training |
 | **Bank 2 (Citi Simulation)** | <http://localhost:3001> | Manage Bank 2 data and local training |
-| **Server Dashboard** | <http://localhost:4000> | Monitor global federated learning process |
 
 **Login Credentials** (for all dashboards):
 
@@ -176,14 +175,14 @@ Open the following URLs in separate browser tabs:
 
 ### Step 2: Observe Individual Performance
 
-After loading data, observe how each bank performs fraud detection independently:
+After loading data, observe how each bank performs anomaly detection independently:
 
 #### Bank 1 Analysis
 
-1. Review the transaction summary and fraud detection statistics
+1. Review the transaction summary and anomaly detection statistics
 2. Note the baseline accuracy, precision, and recall metrics
 3. Examine false positive and false negative rates
-4. Observe which types of transactions are flagged as potentially fraudulent
+4. Observe which types of transactions are flagged as potentially anomalous
 
 #### Bank 2 Analysis
 
@@ -194,10 +193,9 @@ After loading data, observe how each bank performs fraud detection independently
 **Key Metrics to Record:**
 
 - Total transactions processed
-- Fraud detection accuracy
+- Anomaly detection accuracy
 - False positive rate
 - False negative rate
-- Processing time
 
 ### Step 3: Start Federated Learning
 
@@ -259,10 +257,6 @@ After the federated learning round completes:
 2. **Return to Bank 2 Dashboard**
    - Perform the same comparison analysis
    - Document performance improvements
-
-3. **Server Dashboard Analysis**
-   - Review global model performance metrics
-   - Examine aggregation statistics and convergence patterns
 
 #### Expected Improvements
 
