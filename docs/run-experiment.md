@@ -1,8 +1,7 @@
 # AIKYA Federated Learning - Experiment Guide
 **⚠️ Aikya is a Proof of Concept project and not meant for production usage**
 
-This guide walks you through conducting experiments with multiple datasets and federated learning algorithms.
-
+This guide will help you set up and run your first federated learning experiment with simulated partcipants and server.
 ## Table of Contents
 
 - [Table of Contents](#table-of-contents)
