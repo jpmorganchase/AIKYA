@@ -1,7 +1,8 @@
 # AIKYA Federated Learning - Quickstart Guide
-**⚠️ Aikya is a Proof of Concept and not meant for production usage**
+**⚠️ Aikya is a Proof of Concept project and not meant for production usage**
 
- This guide will help you set up and run your first federated learning experiment with simulated bank clients.
+ This guide will help you set up and run your first federated learning experiment with synthetically generated datasets and simulated partcipants and server.
+
 
 ## Table of Contents
 
