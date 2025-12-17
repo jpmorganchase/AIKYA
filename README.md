@@ -1,18 +1,101 @@
 # Aikya
 
-- [License](#license)
+AIKYA is a proof-of-concept project that leverages federated learning frameworks(FL) for enhancing anomaly detection in financial transactions. The project evaluates whether decentralized model training across multiple institutions can achieve comparable performance to centralized training—without sharing raw data.
+
+This repository is intended for engineers, researchers, and technically inclined practitioners exploring federated learning architectures. It is not intended for production use.
+
+## Table of Contents
+
+- [System Architecture](#system-architecture)
+- [Build and run](#build-and-run)
+- [Sequence flow](#sequence-flow)
+- [Data](#data)
+- [Frequently Asked Questions (FAQ)](#frequently-asked-questions-faq)
+- [Citation](#citation)
 - [Notice](#notice)
 - [Notes and Contribution](#notes-and-contribution)
-- [Introduction](#introduction)
-  - [Overview](#overview)
-  - [Industry Paper](#industry-paper)
-  - [Quick Start Guides: Setup and running the experiments](#quick-start-guides-setup-and-running-the-experiments)
-- [System Architecture](#system-architecture)
-- [Sequence flow](#sequence-flow)
+- [Disclaimer](#disclaimer)
+- [License](#license)
 
-## License
 
-AIKYA is licensed under Apache 2.0 license. Please refer to [LICENSE](./LICENSE) file.
+## System Architecture
+
+The permissioned experimental federated learning setup employs a client-server architecture. Network Participants are clients, and the Network Server forms the server. Fig. 3 provides a high-level overview of the system architecture and components
+
+![System Architecture](./docs/resources/Aikya-Network-Diagram.png)
+
+## Build and run
+
+**⚠️ Aikya is a Proof of Concept and not meant for production usage**
+
+- To build and run services locally, please refer to our [quickstart guide](./docs/quickstart-guide.md).
+- To understand the experimental process and steps, please refer to [these instructions](./docs/run-experiment.md).
+
+## Sequence flow
+
+All the experiments are entirely driven via the project's custom user interface, ensuring reproducibility and traceability. Prior to interaction, sample synthetically generated datasets are loaded onto client nodes for the Data Processor service to ingest and reference in the database. Client UIs are accessible via unique URIs for each participant, with client systems physically isolated on distinct machines. All subsequent steps assume network bootstrapping is complete. The diagram below summarizes the sequence of flow visually. Please refer to the enumerated points for more details on each step.
+
+![Sequence Flow](./docs/resources/Aikya-Workflow-Diagram.png)
+# Data
+  The data used in the experiments is available in the [data](./data) directory. All the data is synthetic and is generated using the [data generator](./data_generator).
+
+# Frequently Asked Questions (FAQ)
+### What is AIKYA?
+
+AIKYA is an experimental, research-oriented implementation of federated learning for anomaly detection in financial systems. It demonstrates how multiple participants can collaboratively train machine learning models without sharing raw data.
+
+### Is this a production-ready system?
+
+No. AIKYA is not production-ready. It has not been designed, tested, or validated for production use and should not be used in operational, commercial, or compliance-sensitive environments.
+
+### What problem does this project address?
+
+The project explores whether federated learning can achieve comparable outcomes to centralized training for anomaly detection while respecting data locality, privacy, and regulatory constraints common in financial institutions.
+
+### What type of data does AIKYA use?
+
+The repository uses synthetic or simulated datasets for experimentation. No real customer or financial data is included.
+
+
+### Does AIKYA provide privacy or security guarantees?
+
+No. AIKYA demonstrates federated learning mechanics only. It does not implement or guarantee:\n- Secure aggregation\n- Differential privacy\n- Cryptographic protections\n- Adversarial robustness
+
+### How does AIKYA differ from centralized machine learning?
+
+In centralized ML, all data is aggregated into a single location for training. In AIKYA, data remains local to each participant, and only model parameters are exchanged and aggregated by the federated server.
+
+### Can I contribute code or submit pull requests?
+
+At this time, external pull requests are not accepted. The repository is maintained by the core development teams as part of an active research effort. Contribution policies may be updated in the future.
+
+### How can I engage with the project?
+
+Users are encouraged to:\n- Review the code\n- Reproduce experiments\n- Open issues for questions, clarifications, or research discussion
+
+### Are performance results representative of real-world systems?
+
+No. Experimental results are directional and illustrative. They are intended to support research exploration rather than serve as benchmarks for real-world deployments.
+
+### Is this project related to a publication?
+
+Yes. The repository supports experimentation and validation of concepts discussed in the Decentralized AI Kinexys industry paper.
+
+### What license governs this repository?
+
+AIKYA is released under the Apache License 2.0. Refer to the LICENSE file for details.
+
+### Why no external pull requests?
+This repository is an active research codebase, and contributions are currently limited to the core teams to preserve experimental consistency and reproducibility.
+
+# Citation
+
+@article{aikya2025,
+  title={Project AIKYA: Enhanced Anomaly Detection in Financial Transactions through Decentralized AI},
+  author={J.P. Morgan and BNY},
+  year={2025},
+  url={https://github.com/jpmorganchase/AIKYA}
+}
 
 ## Notice
 
@@ -20,39 +103,16 @@ Please refer to the [NOTICE](./NOTICE) file for more details on third party soft
 
 ## Notes and Contribution
 
-We would like to highlight that Aikya is purely experimental and research code base, yet. Should this change, a notice reflecting the same will be posted.
+- This repository is currently a static artifact of our research. To maintain alignment with the published results, we are not accepting Pull Requests or active issue tracking at this time. However, feel free to fork the repository for your own research.
+- The codebase is provided as-is. It does not account for all edge cases and is not supported through external bug-fix requests. Issues and fixes are addressed internally at the discretion of the maintainers.
+- Code quality and performance are not optimized and are out of scope for the current release. Improvements, if any, will be introduced only in future versions.
+- This repository must not be used as a reference for production systems. It exists solely to support validation of claims presented in the Decentralized AI Kinexys industry paper and is provided without warranties or guarantees of any kind.
 
-- For now, this code is meant to be maintained only by the core development and maintenance team(s). Please do not raise PRs against this repository until this notice is taken down - they will be declined.
-  - We have tried our best to sanitize the code of bugs - but it is impossible to cater to every edge case, especially in research style code bases. For now, please don't reach out to us for fixes. We will roll out fixes as and when we find them.
-  - It is known that the code quality and performance is not optimal. Again, this will be dealt with in future versions as our efforts shape up.
-- We recommend against using this codebase as a reference for any production applications. This repository is purely for validating claims as part of the industry paper on Decentralized AI Kinexys published and is offered without any guarantees.
+# Disclaimer
 
-## Introduction
+This project is provided for research and educational purposes only. It should not be used as-is in production systems or relied upon for compliance-sensitive workflows.
 
-### Overview
 
-Project AIKYA is an exciting proof-of-concept (PoC) for federated learning, developed through a collaboration between Kinexys by J.P. Morgan and BNY. This exploration demonstrates the power of FL in institutional collaboration, proving that globally aggregated models can outperform individual ones by integrating the unique strengths that they each provide. This approach makes it a viable option for cross-border payments and other complex financial transactions. Following this PoC, several exciting directions are available to explore, including real-world data validation, scaling to multi-participant networks, testing FL models that support participants with heterogeneous technology stacks and/or model-agnostic networks, and testing across multi-region and multi-industry networks.
+## License
 
-### Industry Paper
-
-Please refer to the industry paper on Decentralized AI Kinexys published by J.P. Morgan and BNY Mellon for more details on the concepts and ideas behind this project: [Enhanced Anomaly Detection in Financial Transactions
-through Decentralized AI](https://www.jpmorgan.com/kinexys/documents/kinexys-project-aikya-enhanced-anomaly-detection-through-decentralized-ai.pdf)
-
-### Quick Start Guides: Setup and running the experiments
-
-**⚠️ Aikya is a PoC and not meant for production usage**
-
-- To build and run services locally, please refer to our [quickstart guide](./docs/quickstart-guide.md).
-- To understand the experimental process and steps to run it yourself, please refer to [these instructions](./docs/run-experiment.md).
-
-## System Architecture
-
-The permissioned experimental FL setup employs a client-server architecture. Network Participants are clients, and the Network Server forms the server. Fig. 3 provides a high-level overview of the system architecture and components
-
-![System Architecture](./docs/resources/Aikya-Network-Diagram.png)
-
-## Sequence flow
-
-All the experiments are entirely driven via the operations UI, ensuring reproducibility and traceability. Prior to interaction, sample datasets are loaded onto client nodes for the Data Processor service to ingest and reference in the database. Client UIs are accessible via unique URIs for each participant, with client systems physically isolated on distinct machines. All subsequent steps assume network bootstrapping is complete. The diagram below summarizes the sequence of flow visually. Please refer to the enumerated points for more details on each step.
-
-![Sequence Flow](./docs/resources/Aikya-Workflow-Diagram.png)
+AIKYA is licensed under Apache 2.0 license. Please refer to [LICENSE](./LICENSE) file.
