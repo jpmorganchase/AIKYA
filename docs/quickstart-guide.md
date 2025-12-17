@@ -1,6 +1,7 @@
 # AIKYA Federated Learning - Quickstart Guide
+**⚠️ Aikya is a Proof of Concept and not meant for production usage**
 
-Welcome to AIKYA, a comprehensive federated learning platform that enables secure, privacy-preserving machine learning across multiple institutions. This guide will help you set up and run your first federated learning experiment with simulated bank clients.
+ This guide will help you set up and run your first federated learning experiment with simulated bank clients.
 
 ## Table of Contents
 
