@@ -36,7 +36,7 @@ optree==0.17.0
 packaging==25.0
 pandas==2.3.3
 pathspec==0.12.1
-protobuf==4.25.8
+protobuf==5.29.6
 pycparser==2.23
 pycryptodome==3.23.0
 pydantic==2.12.3
